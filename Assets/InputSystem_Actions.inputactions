@@ -996,15 +996,6 @@
             "id": "577b6bf9-3979-4e02-bed8-5836ac922d2a",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "72065243-0535-4c74-ab69-afaeef7a16e0",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Shoot2",
                     "type": "Button",
                     "id": "182fcddb-d216-4a02-9a87-26995c0a18fb",
@@ -1017,24 +1008,31 @@
                     "name": "Shoot1",
                     "type": "Button",
                     "id": "a0f15d93-014f-4025-8151-4ac0af6ec61c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightInteract",
+                    "type": "Button",
+                    "id": "3dd8a851-19ac-41d9-90e0-5d7549a3c5f6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftInteract",
+                    "type": "Button",
+                    "id": "9f815b5b-3c3f-456c-b564-527cc01e3585",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "f40b2af7-6ae0-4f3b-a031-a02feec03002",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "b486da41-5997-4bb9-915e-9c78d6a2544c",
@@ -1054,6 +1052,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0f5507f-a7e3-4dd9-aa32-9f2e15299e69",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightInteract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87c83d7c-63b7-42dc-9f47-a3c57a48ce2e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftInteract",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
