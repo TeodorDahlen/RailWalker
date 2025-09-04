@@ -17,30 +17,24 @@ public class GunBase : MonoBehaviour
     public LayerMask hitLayers;          // Which layers to collide with
 
 
-    void Update()
+
+    //private void Update()
+    //{
+    //    Shoot();
+    //}
+    public void Shoot()
     {
-        if (Input.GetButtonDown("Fire1"))
+        RaycastHit hit;
+        Vector3 origin = ShootingPoint.transform.position;
+        Vector3 direction = ShootingPoint.transform.forward;
+
+        //Debug.DrawLine(origin, direction * maxDistance, Color.red, 2);
+        
+        if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, hitLayers))
         {
-            RaycastHit hit;
-            Vector3 origin = ShootingPoint.transform.position;
-            Vector3 direction = ShootingPoint.transform.forward;
-
-            Debug.DrawLine(origin, direction * maxDistance, Color.red, 2);
-
-            if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, hitLayers))
-            {
-                Shoot(hit.collider);
-            }            
+            Debug.Log("Hit: " + hit.collider.name);
         }
+        ShootingPoint.transform.rotation = transform.rotation;
+        Instantiate(Projectile, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
     }
-
-
-    void Shoot(Collider HitCollider)
-    {
-        if(HitCollider != null)
-        {
-            Debug.Log("Hit: " + HitCollider.name);
-        }
-    }
-
 }
