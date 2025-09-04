@@ -132,12 +132,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106982498274985397}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.053, z: 0.329}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33409184, z: 4.6559634}
+  m_LocalScale: {x: 24.037651, y: 6.3036227, z: 13.189699}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4302427820519250247}
+  m_Father: {fileID: 724682441385927216}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3120138611080577484
 GameObject:
@@ -172,6 +172,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7647915046144415336}
+  - {fileID: 3670253381888532302}
   m_Father: {fileID: 4302427820519250247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &678134501914601852
@@ -257,6 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4302427820519250247}
+  - component: {fileID: 3143105821348654198}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -272,12 +274,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7227938598562051473}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3142271, y: -0.21617258, z: 0.48206085}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 724682441385927216}
-  - {fileID: 3670253381888532302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3143105821348654198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227938598562051473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ec92e3dcc95e441960f00f2127e18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 1224074786929903618, guid: f3b4427a656864f4c8b537f4a4437a2d, type: 3}
+  ShootingVFX: {fileID: 0}
+  ShootingPoint: {fileID: 1106982498274985397}
+  radius: 0.5
+  maxDistance: 1000
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
