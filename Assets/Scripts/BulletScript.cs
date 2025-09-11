@@ -8,7 +8,7 @@ public class BulletScript : MonoBehaviour
 
     [SerializeField] private float maxSpeed = 20f;        
     [SerializeField] private float accelerationTime = 2f;
-    [SerializeField] private Vector3 direction;
+    [SerializeField] public Vector3 direction;
 
     private float currentSpeed = 0f;
     private float elapsedTime = 0f;
