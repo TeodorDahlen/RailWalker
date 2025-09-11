@@ -118,6 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2348035668003276166}
   - component: {fileID: 3304037912951412497}
+  - component: {fileID: 338346977228736751}
   m_Layer: 0
   m_Name: Container
   m_TagString: Untagged
@@ -155,3 +156,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   DeathEffect: {fileID: 0}
+--- !u!114 &338346977228736751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9148664461337000115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5656333112923644888a378da8eec925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

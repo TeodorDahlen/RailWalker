@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class Test_getContainer : MonoBehaviour
@@ -9,9 +10,23 @@ public class Test_getContainer : MonoBehaviour
       Debug.Log($"got touched by {other}");
         
         
-      Instantiate(PreFabContainer, transform.position , Quaternion.identity);
+     if (FadeToBlack.Instance.darkness == true)
+        {
+            SpawnContainer();
+        }
+     else
+        {
+            SpawnContainer();
+        }
+
       Debug.Log("spawning container");
-        FadeToBlack.Instance.FadeToDarkness();
+      FadeToBlack.Instance.FadeToDarkness();
         
+    }
+
+    [Button]
+    private void SpawnContainer ()
+    {
+       Instantiate(PreFabContainer, transform.position, Quaternion.identity);
     }
 }

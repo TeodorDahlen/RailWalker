@@ -1040,6 +1040,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1805324139}
+  - {fileID: 1232394383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &972104452
@@ -1350,7 +1351,7 @@ Transform:
   m_GameObject: {fileID: 1149024713}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.73471993, z: -0, w: 0.67837065}
-  m_LocalPosition: {x: 0.19198608, y: 0, z: -0.134}
+  m_LocalPosition: {x: 0.19198608, y: 0.749, z: -0.134}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1507,6 +1508,50 @@ MonoBehaviour:
     _installationVariants:
     - _memberName: mode
       _value: '{"value__":0}'
+--- !u!1 &1232394382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232394383}
+  - component: {fileID: 1232394384}
+  m_Layer: 0
+  m_Name: Container Managment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1232394383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232394382}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -67.46199, y: -9.317871, z: -115.77771}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 839984272}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1232394384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232394382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b590ab25b77e2e94f8c54a9c90e06af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1310479898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,7 +2161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac97587a8f7da84597cefe761e42aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenFade: {fileID: 0}
+  screenFade: {fileID: 1310479902}
+  darkness: 0
 --- !u!4 &1805324139
 Transform:
   m_ObjectHideFlags: 0
