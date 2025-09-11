@@ -11,6 +11,7 @@ public class GatlingGun : MonoBehaviour
     [SerializeField] private float fireRate = 0.1f;
     [SerializeField] private float radius = 0.5f;   // distance from center
     [SerializeField] private float spinSpeed = 360f; // degrees per second
+    [SerializeField] private float spreadAngle = 5f; // degrees
 
     private GunBase gunBase;
     private GameObject shootingPoint;
@@ -60,7 +61,7 @@ public class GatlingGun : MonoBehaviour
 
         // Updated angle based on spin speed and fire rate
         angle += spinSpeed * fireRate;
-        float rad = angle * Mathf.Deg2Rad;
+        float rad = angle * Mathf.Deg2Rad + UnityEngine.Random.Range(-spreadAngle, spreadAngle) * Mathf.Deg2Rad;
 
         Vector3 offset = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0f) * radius;
 
