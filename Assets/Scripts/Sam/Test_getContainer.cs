@@ -11,6 +11,7 @@ public class Test_getContainer : MonoBehaviour
         
       Instantiate(PreFabContainer, transform.position , Quaternion.identity);
       Debug.Log("spawning container");
+        FadeToBlack.Instance.FadeToDarkness();
         
     }
 }
