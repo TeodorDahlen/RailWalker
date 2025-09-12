@@ -6,9 +6,12 @@ public class Container : MonoBehaviour
     private int currentResourceCount = 0;
     private int damageResourceGone = 100;
 
-    private bool GotResources = false;
+    public bool GotResources = false;
 
-   
+    private void Start()
+    {
+        Resources_Container_Managment.Instance.addContainer(this);
+    }
 
     private void GetResources()
     {
