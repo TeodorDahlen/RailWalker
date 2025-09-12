@@ -1,5 +1,6 @@
 using UnityEngine;
 using NaughtyAttributes;
+using static UnityEngine.InputSystem.InputAction;
 
 public class GatlingGun : MonoBehaviour
 {
@@ -85,7 +86,7 @@ public class GatlingGun : MonoBehaviour
 
         if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, hitLayers))
         {
-            Debug.Log("Hit: " + hit.collider.name);
+            //Debug.Log("Hit: " + hit.collider.name);
         }
         shootingPoint.transform.rotation = transform.rotation;
         GameObject bullet = Instantiate(Projectile, shootingPoint.transform.position, shootingPoint.transform.rotation);
@@ -120,6 +121,20 @@ public class GatlingGun : MonoBehaviour
         Debug.DrawRay(origin.position, finalDir * 3f, Color.red, 2f);
 
         return finalDir;
+    }
+
+    public void TriggerPressed(CallbackContext context) 
+    {
+        if(context.started)
+        {
+            ConstantFire();
+        }
+        else if(context.canceled)
+        {
+            StopFiring();
+            Debug.Log("Cancel");
+        }
+                
     }
 }
 
