@@ -6838,24 +6838,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1148760327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1993772205098882103, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-  m_PrefabInstance: {fileID: 8972423737181025875}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1148760329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148760327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4153201098f5684ba97329c329d836c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 0.03
 --- !u!1 &1152555977
 GameObject:
   m_ObjectHideFlags: 0
@@ -9424,92 +9406,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1351739442}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1706052408
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1706052411}
-  - component: {fileID: 1706052410}
-  - component: {fileID: 1706052409}
-  m_Layer: 0
-  m_Name: GatlingGun
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1706052409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706052408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d376240d064f4484e81824d51391caf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buttonClickActions:
-  - Title: GatlingGunShoot
-    Button: 0
-    ButtonMode: 0
-    InputActionReference: {fileID: -252251809823070618, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-    CallbackWithContext:
-      m_PersistentCalls:
-        m_Calls: []
-    Callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1366363203}
-          m_TargetAssemblyTypeName: GatlingGun, Assembly-CSharp
-          m_MethodName: ConstantFire
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1706052410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706052408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockId: 80aa2eb2-af2f-40a9-ad9e-18044ce65bee
-  instanceId: 416ba041-4250-4ee4-ad5a-08c0e188453e
-  version: 1
-  installationRoutineCheckpoint:
-    _installationRoutineId: 
-    _installationVariants: []
---- !u!4 &1706052411
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706052408}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712635142
 GameObject:
@@ -12501,6 +12397,67 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1001 &3362483715834600052
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921326191132524039, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951172399200004279, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_Name
+      value: GatlingGunControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[0].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1366363203}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fee32c3995d67a341810a938f64509e9, type: 3}
 --- !u!82 &3972861551322332793
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12837,14 +12794,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3216191216073672381, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: spreadAngle
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3216191216073672381, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: useRandomSpread
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3686275718714140580, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.71
@@ -12889,103 +12838,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GatlingGun
       objectReference: {fileID: 0}
-    - target: {fileID: 7535303018700899511, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535303018700899511, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0105383
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535303018700899511, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.9549267
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535303018700899511, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535303018700899511, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.611
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535303018700899511, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535303018700899511, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: recoil
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: Projectile
-      value: 
-      objectReference: {fileID: 1224074786929903618, guid: f3b4427a656864f4c8b537f4a4437a2d, type: 3}
-    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: ShootingVFX
-      value: 
-      objectReference: {fileID: 4154188797642464329, guid: 055b5042b581acc429ef468f4b38a7f0, type: 3}
-    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: spreadAngle
-      value: 9.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: ShootingPoint
-      value: 
-      objectReference: {fileID: 1148760327}
-    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: shootingPoint
-      value: 
-      objectReference: {fileID: 1148760327}
-    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: useRandomSpread
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: hitLayers.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0063456628
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.022511637
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.999962
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.008726558
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2008754919168687140, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-    - {fileID: 3216191216073672381, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1993772205098882103, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1148760329}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -13003,7 +12859,7 @@ SceneRoots:
   - {fileID: 316346785}
   - {fileID: 813474039}
   - {fileID: 207929405}
-  - {fileID: 1706052411}
+  - {fileID: 3362483715834600052}
   - {fileID: 264475885}
   - {fileID: 1064536625}
   - {fileID: 8285545136025160541}
