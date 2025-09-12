@@ -11,8 +11,9 @@ public class ExplodingCacti : MonoBehaviour
         GameObject newExplosion = Instantiate(explodingCactiEffect,transform.position, Quaternion.identity);
         Destroy(newExplosion, 1.0f);
 
-       
+        TrainMovingTemp.Instance.everything.Remove(gameObject);
         Destroy(gameObject);
     }
+
     
 }
