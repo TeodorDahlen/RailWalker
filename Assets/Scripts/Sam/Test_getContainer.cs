@@ -29,4 +29,10 @@ public class Test_getContainer : MonoBehaviour
     {
        Instantiate(PreFabContainer, transform.position, Quaternion.identity);
     }
+
+    [Button]
+    private void GetFullResources()
+    {
+
+    }
 }
