@@ -1012,6 +1012,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Shoot_GatlingGun",
+                    "type": "Button",
+                    "id": "08b7f4a1-a379-4646-b10f-b7a24a62b3c7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Release_GatlingGun",
+                    "type": "Button",
+                    "id": "26e4984e-eb1b-4c19-be64-fa8f6371b2c9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1034,6 +1052,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6fbbe0e8-8c5e-4d73-829d-5f4b5f8eab09",
+                    "path": "<OculusTouchController>{RightHand}/triggerPressed",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot_GatlingGun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53c5af46-8d5b-4c0f-85df-acad20328a3f",
+                    "path": "<OculusTouchController>{RightHand}/triggerPressed",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Release_GatlingGun",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

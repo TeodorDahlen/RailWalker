@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: af890c16fad34d3468eac1ed3f44bec8
+<<<<<<<< HEAD:Assets/Audio/Emmas.meta
+guid: 2f5a07c785c15e24083c71c63a8ebc9a
+========
+guid: 543658bb41eb7f44a9ce859c7953fa42
+>>>>>>>> emma/main:Assets/Emmas/Weapons Pack(LOW POLY).meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
