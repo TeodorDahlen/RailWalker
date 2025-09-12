@@ -13,7 +13,6 @@ public class BasicMonsterMovement : MonoBehaviour
 
     private void Update()
     {
-
         direction = (Target.transform.position - transform.position).normalized;
         transform.forward = direction;
         direction = new Vector3(direction.x, 0, direction.z);
