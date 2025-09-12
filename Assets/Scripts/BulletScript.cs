@@ -23,9 +23,12 @@ public class BulletScript : MonoBehaviour
         Destroy(gameObject, 5);
         direction = transform.forward;
         
-        audioSource = GetComponent<AudioSource>();
-        baseAudioStrenght = audioSource.volume;
-        PlayShooting();
+        if(GetComponent<AudioSource>() != null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            baseAudioStrenght = audioSource.volume;
+            PlayShooting();
+        }
     }
     private void Update()
     {
