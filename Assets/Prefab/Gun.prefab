@@ -95,7 +95,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95f68545ee5f76047ba5974d9fe86671, type: 2}
+  - {fileID: 2100000, guid: e5002f0ff4957324986b3d0c1e60a4b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,6 +117,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5071954426482495257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5760179100796742147}
+  m_Layer: 0
+  m_Name: TargetStar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5760179100796742147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071954426482495257}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3142271, y: 0.21617258, z: -0.48206085}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4302427820519250247}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7227938598562051473
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +181,7 @@ Transform:
   m_Children:
   - {fileID: 724682441385927216}
   - {fileID: 3670253381888532302}
+  - {fileID: 5760179100796742147}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3143105821348654198
@@ -165,13 +197,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1224074786929903618, guid: f3b4427a656864f4c8b537f4a4437a2d, type: 3}
+  AutoProjectile: {fileID: 1224074786929903618, guid: d4eaad30da0e3d948b4f7ae6327a58ab, type: 3}
   ShootingVFX: {fileID: 4154188797642464329, guid: 055b5042b581acc429ef468f4b38a7f0, type: 3}
   ShootingPoint: {fileID: 1106982498274985397}
-  radius: 0.5
-  maxDistance: 1000
+  radius: 1.5
+  maxDistance: 10000
   hitLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  DeadTarget: []
+  targetMarker: {fileID: 0}
+  playerCamera: {fileID: 0}
+  distanceFromCamera: 2
 --- !u!82 &9109392957490850915
 AudioSource:
   m_ObjectHideFlags: 0

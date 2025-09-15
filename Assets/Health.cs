@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
     [SerializeField]
     private GameObject DeathEffect;
 
+    [SerializeField]
+    private GameObject Core;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -33,5 +35,23 @@ public class Health : MonoBehaviour
         GameObject newEffect = Instantiate(DeathEffect, transform.position, Quaternion.identity);
         Destroy(newEffect, 2);
         Destroy(gameObject);
+    }
+
+    public float GetHealth()
+    {
+        return currentHealth;   
+    }
+
+
+    public GameObject GetCore()
+    {
+        if (Core != null)
+        {
+            return Core;
+        }
+        else
+        {
+            return gameObject;
+        }
     }
 }
