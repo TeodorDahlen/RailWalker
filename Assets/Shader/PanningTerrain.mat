@@ -28,7 +28,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainText:
-        m_Texture: {fileID: 2800000, guid: 4de422fbbbe96c64d8a2a1bf3ff4d85d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 39c6bcfc2b42cd341b2a3ce377c0a184, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_d8c1fa9acc2645138f5b703816a946a2_Texture_1_Texture2D:
@@ -65,9 +65,9 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.3921569}
-    - _MainTexSpeed: {r: 0, g: -2, b: 0, a: 0}
-    - _MainTexTiling: {r: 100, g: 100, b: 0, a: 0}
+    - _Color: {r: 1, g: 0.6009634, b: 0.33018857, a: 1}
+    - _MainTexSpeed: {r: 0, g: -8, b: 0, a: 0}
+    - _MainTexTiling: {r: 800, g: 400, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8288038659205025214
