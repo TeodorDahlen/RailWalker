@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using NaughtyAttributes;
 
 public class Resources_Container_Managment : MonoBehaviour
 {
@@ -48,7 +49,7 @@ public class Resources_Container_Managment : MonoBehaviour
         resourceScoreText.text = currentResourceCountAllContainers.ToString("N0");
     }
 
-
+    [Button]
     public void addContainer(Container con)
     {
         if (!containers.Contains(con))
@@ -56,6 +57,9 @@ public class Resources_Container_Managment : MonoBehaviour
             containers.Add(con);
             CurrentContainerCount++;
             Debug.Log("one container added");
+
+            int resourceadd = 1000;
+            addResources(resourceadd);
         }
         else
         {
@@ -69,14 +73,16 @@ public class Resources_Container_Managment : MonoBehaviour
         CurrentContainerCount--;
     }
 
+    
     private void addResources(int resources)
     {
-
+        Debug.Log($"added {resources} resources to container");
     }
 
+    
     private void RemoveResources (int resources)
     {
-
+        Debug.Log($"Removed {resources} resources from container");
     }
 
 }

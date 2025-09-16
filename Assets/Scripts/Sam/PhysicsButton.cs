@@ -38,14 +38,14 @@ public class PhysicsButton : MonoBehaviour
         //gets the %
         var value = Vector3.Distance(_startPos, transform.localPosition) / _joint.linearLimit.limit;
 
-        Debug.Log($"value is: {value}");
+        //Debug.Log($"value is: {value}");
 
         //if its within the small number in deadzone return to 0
-        //if (Mathf.Abs (value) < deadZone)
-        //{
-        //    value = 0;
-        //    Debug.Log("deadzoine to 0");
-        //}
+        if (Mathf.Abs(value) < deadZone)
+        {
+            value = 0;
+            //Debug.Log("deadzoine to 0");
+        }
 
         // returns a clamped version 
         return Mathf.Clamp(value, -1f, 1f);
