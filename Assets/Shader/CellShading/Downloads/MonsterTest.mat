@@ -55,17 +55,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CircleDensity: 16.96
-    - _FalloffThreshold: 3.32
-    - _Lit_Threshold: 2
+    - _CircleDensity: 7.5
+    - _FalloffThreshold: 3.41
+    - _Lit_Threshold: 3.06
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Rotation: 5
+    - _Rotation: 4.2
     - _ShadingMultiplier: 0
     - _Softness: 0
     - _USE_SCREEN_SPACE: 0
     m_Colors:
-    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _PatternColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

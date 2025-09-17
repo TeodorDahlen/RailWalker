@@ -15,7 +15,7 @@ public class BasicMonsterMovement : MonoBehaviour
     {
         direction = (Target.transform.position - transform.position).normalized;
         transform.forward = direction;
-        direction = new Vector3(direction.x, 0, direction.z);
+        //direction = new Vector3(direction.x, 0, direction.z);
 
         transform.position += direction * Time.deltaTime * movementSpeed;
     }
