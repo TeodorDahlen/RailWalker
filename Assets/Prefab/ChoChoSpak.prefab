@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 3794104889685561397}
   - component: {fileID: 6402495625033607862}
   - component: {fileID: 5784225253776623229}
+  - component: {fileID: 3799369309533422003}
   m_Layer: 0
   m_Name: ChoChoSpak
   m_TagString: Untagged
@@ -548,7 +549,7 @@ MonoBehaviour:
   _forwardElement: {fileID: 0}
   _oneGrabTransformer: {fileID: 5784225253776623229}
   _twoGrabTransformer: {fileID: 5784225253776623229}
-  _targetTransform: {fileID: 0}
+  _targetTransform: {fileID: 4236964477459115247}
   _maxGrabPoints: -1
   _rigidbody: {fileID: 4772513851474907704}
   _kinematicWhileSelected: 1
@@ -565,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactableView: {fileID: 0}
+  _interactableView: {fileID: 3799369309533422003}
   _whenHover:
     m_PersistentCalls:
       m_Calls: []
@@ -575,7 +576,7 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8417863353889213954}
         m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
         m_MethodName: set_material
         m_Mode: 2
@@ -590,7 +591,7 @@ MonoBehaviour:
   _whenUnselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8417863353889213954}
         m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
         m_MethodName: set_material
         m_Mode: 2
@@ -652,13 +653,13 @@ MonoBehaviour:
     YAxis:
       ConstrainAxis: 1
       AxisRange:
-        Min: 0
-        Max: 0
+        Min: -101.58
+        Max: -101.58
     ZAxis:
       ConstrainAxis: 1
       AxisRange:
-        Min: 0
-        Max: 0
+        Min: 90
+        Max: 90
   _scaleConstraints:
     ConstraintsAreRelative: 1
     XAxis:
@@ -677,6 +678,29 @@ MonoBehaviour:
         Min: 1
         Max: 1
   _resetScaleResponsivenessOnConstraintOvershoot: 0
+--- !u!114 &3799369309533422003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5780497402784830592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1bc992571301d4a9602ac95ef4c71a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 9174928460360029548}
+  _pointableElement: {fileID: 3794104889685561397}
+  _rigidbody: {fileID: 4772513851474907704}
+  _grabSource: {fileID: 7635784547019185162}
+  _useClosestPointAsGrabSource: 0
+  _releaseDistance: 0
+  _resetGrabOnGrabsUpdated: 1
+  _physicsGrabbable: {fileID: 0}
 --- !u!1 &9174928460360029548
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +712,6 @@ GameObject:
   - component: {fileID: 4086955597695228635}
   - component: {fileID: 431808798254905590}
   - component: {fileID: 7542888514466994991}
-  - component: {fileID: 2312623479311536816}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -764,26 +787,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2312623479311536816
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174928460360029548}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

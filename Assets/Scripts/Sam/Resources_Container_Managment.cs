@@ -28,6 +28,8 @@ public class Resources_Container_Managment : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        UpdateResourceScore();
     }
 
     private void ShowScore()
@@ -42,6 +44,7 @@ public class Resources_Container_Managment : MonoBehaviour
                 UpdateResourceScore();
             }
         }
+        Debug.Log("resource text should not be new text");
     }
 
     private void UpdateResourceScore()
@@ -49,7 +52,7 @@ public class Resources_Container_Managment : MonoBehaviour
         resourceScoreText.text = currentResourceCountAllContainers.ToString("N0");
     }
 
-    [Button]
+    
     public void addContainer(Container con)
     {
         if (!containers.Contains(con))
