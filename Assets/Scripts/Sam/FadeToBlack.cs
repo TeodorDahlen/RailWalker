@@ -31,6 +31,7 @@ public class FadeToBlack : MonoBehaviour
     [Button]
     public void FadeToDarkness()
     {
+        Debug.Log("fadetodarkness method");
         screenFade.FadeOut();
         darkness = true;
         Invoke("GoBackLight", delayToLight);
