@@ -41,8 +41,8 @@ public class ObjectPool : MonoBehaviour
 
     public void ReturnObject(GameObject obj)
     {
-        Debug.Log("Returning object to pool");
         obj.SetActive(false);
+        Debug.Log("Returning object to pool");
     }
 
     void OnDisable()

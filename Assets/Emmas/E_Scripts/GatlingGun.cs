@@ -87,14 +87,23 @@ public class GatlingGun : MonoBehaviour
 
         //Debug.DrawLine(origin, direction * maxDistance, Color.red, 2);
 
+        // In GatlingGun.Shoot
+        GameObject bullet = bulletPool.GetGameObject();
+        bullet.transform.position = shootingPoint.transform.position;
+        bullet.transform.rotation = shootingPoint.transform.rotation;
+
+        // Tell the bullet which pool it belongs to
+        bullet.GetComponent<BulletScript>().SetPool(bulletPool);
+
+
         if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, hitLayers))
         {
             //Debug.Log("Hit: " + hit.collider.name);
         }
-        shootingPoint.transform.rotation = transform.rotation;
-        GameObject bullet = bulletPool.GetGameObject();
-        bullet.transform.position = shootingPoint.transform.position;
-        bullet.transform.rotation = shootingPoint.transform.rotation;
+        // shootingPoint.transform.rotation = transform.rotation;
+        // GameObject bullet = bulletPool.GetGameObject();
+        // bullet.transform.position = shootingPoint.transform.position;
+        // bullet.transform.rotation = shootingPoint.transform.rotation;
 
         GameObject newVFX = Instantiate(ShootingVFX, shootingPoint.transform.position, Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle)));
         Destroy(newVFX, 0.5f);
@@ -129,18 +138,18 @@ public class GatlingGun : MonoBehaviour
         return finalDir;
     }
 
-    public void TriggerPressed(CallbackContext context) 
+    public void TriggerPressed(CallbackContext context)
     {
-        if(context.started)
+        if (context.started)
         {
             ConstantFire();
         }
-        else if(context.canceled)
+        else if (context.canceled)
         {
             StopFiring();
             Debug.Log("Cancel");
         }
-                
+
     }
 }
 

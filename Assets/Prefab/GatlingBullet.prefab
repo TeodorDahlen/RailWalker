@@ -5104,6 +5104,7 @@ MonoBehaviour:
   maxSpeed: 100
   accelerationTime: 0
   direction: {x: 0, y: 0, z: 1}
+  distanceUntilDestruction: -235.4
   shootingSound: {fileID: 8300000, guid: 02fb39473a9c289458a458e7f38dc60f, type: 3}
 --- !u!82 &6632678772314106930
 AudioSource:

@@ -10,6 +10,8 @@ public class BulletScript : MonoBehaviour
     [SerializeField] private float accelerationTime = 2f;
     [SerializeField] public Vector3 direction;
 
+    [SerializeField] private float timeUntilDestruction = 1f;
+
     private float currentSpeed = 0f;
     private float elapsedTime = 0f;
     private ObjectPool objectPool;
@@ -33,6 +35,14 @@ public class BulletScript : MonoBehaviour
             PlayShooting();
         }
     }
+
+    private void OnEnable()
+    {
+        elapsedTime = 0f;
+        currentSpeed = 0f;
+        direction = transform.forward;
+    }
+
     private void Update()
     {
         elapsedTime += Time.deltaTime;
@@ -43,14 +53,25 @@ public class BulletScript : MonoBehaviour
         currentSpeed = maxSpeed * (1f - Mathf.Exp(-2f * t));
 
         transform.position += direction.normalized * currentSpeed * Time.deltaTime;
-        
+
+
         BulletLifeTime();
 
     }
 
+    public void SetPool(ObjectPool pool)
+    {
+        objectPool = pool;
+    }
+
+
     private void BulletLifeTime()
     {
-        //Timer for bullet to live if it doesn't hit anything
+        // If the bullet has existed longer than allowed, return it to the pool
+        if (elapsedTime >= timeUntilDestruction)
+        {
+            objectPool.ReturnObject(gameObject);
+        }
 
     }
 
