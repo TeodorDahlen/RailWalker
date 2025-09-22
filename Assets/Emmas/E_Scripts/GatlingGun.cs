@@ -12,8 +12,11 @@ public class GatlingGun : MonoBehaviour
     [SerializeField] private float spinSpeed = 360f;
     [SerializeField] private Animation recoil;
 
+    // [SerializeField]
+    // private GameObject Projectile;
+
     [SerializeField]
-    private GameObject Projectile;
+    private ObjectPool bulletPool;
 
     [SerializeField]
     private GameObject ShootingVFX;
@@ -89,7 +92,10 @@ public class GatlingGun : MonoBehaviour
             //Debug.Log("Hit: " + hit.collider.name);
         }
         shootingPoint.transform.rotation = transform.rotation;
-        GameObject bullet = Instantiate(Projectile, shootingPoint.transform.position, shootingPoint.transform.rotation);
+        GameObject bullet = bulletPool.GetGameObject();
+        bullet.transform.position = shootingPoint.transform.position;
+        bullet.transform.rotation = shootingPoint.transform.rotation;
+
         GameObject newVFX = Instantiate(ShootingVFX, shootingPoint.transform.position, Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle)));
         Destroy(newVFX, 0.5f);
 
