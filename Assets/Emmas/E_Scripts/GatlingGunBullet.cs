@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Audio;
 
-public class BulletScript : MonoBehaviour
+public class GatlingGunBullet : MonoBehaviour
 {
     [SerializeField]
     private float Damage;
@@ -10,8 +10,11 @@ public class BulletScript : MonoBehaviour
     [SerializeField] private float accelerationTime = 2f;
     [SerializeField] public Vector3 direction;
 
+    [SerializeField] private float timeUntilDestruction = 1f;
+
     private float currentSpeed = 0f;
     private float elapsedTime = 0f;
+    private ObjectPool objectPool;
 
     private AudioSource audioSource;
 
@@ -21,7 +24,8 @@ public class BulletScript : MonoBehaviour
 
     private void Start()
     {
-        //Destroy(gameObject, 5);
+        objectPool = FindFirstObjectByType<ObjectPool>();
+
         direction = transform.forward;
 
         if (GetComponent<AudioSource>() != null)
@@ -31,17 +35,40 @@ public class BulletScript : MonoBehaviour
             PlayShooting();
         }
     }
+
+    private void OnEnable()
+    {
+        elapsedTime = 0f;
+        currentSpeed = 0f;
+        direction = transform.forward;
+    }
+
     private void Update()
     {
         elapsedTime += Time.deltaTime;
 
-        // Exponential-like increase
-        // At t=0 -> 0, at t=accelerationTime -> ~0.95 maxSpeed
         float t = Mathf.Clamp01(elapsedTime / accelerationTime);
         currentSpeed = maxSpeed * (1f - Mathf.Exp(-2f * t));
 
         transform.position += direction.normalized * currentSpeed * Time.deltaTime;
 
+
+        BulletLifeTime();
+
+    }
+
+    public void SetPool(ObjectPool pool)
+    {
+        objectPool = pool;
+    }
+
+
+    private void BulletLifeTime()
+    {
+        if (elapsedTime >= timeUntilDestruction)
+        {
+            objectPool.ReturnObject(gameObject);
+        }
     }
 
     private void PlayShooting()
@@ -56,6 +83,7 @@ public class BulletScript : MonoBehaviour
         if (other.GetComponent<ExplodingCacti>() != null)
         {
             other.GetComponent<ExplodingCacti>().Explode();
+            objectPool.ReturnObject(gameObject);
         }
     }
 }
