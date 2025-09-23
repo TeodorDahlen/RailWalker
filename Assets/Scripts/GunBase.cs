@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunBase : MonoBehaviour
 {
@@ -61,7 +62,8 @@ public class GunBase : MonoBehaviour
     [SerializeField]
     private GameObject reloadSpot;
 
-    private bool reloadStarted;
+    [HideInInspector]
+    public bool reloadStarted;
 
     [SerializeField]
     private AudioClip reloadSound;
@@ -75,6 +77,11 @@ public class GunBase : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private Image autoAim;
+
+    [SerializeField]
+    private Gradient gradient;
 
     private void Start()
     {
@@ -102,21 +109,26 @@ public class GunBase : MonoBehaviour
             target = null;
         }
 
-        mainScale = Vector3.Lerp(mainScale, baseScale, Time.deltaTime * 15);
+        mainScale = Vector3.Lerp(mainScale, baseScale, Time.deltaTime * 25);
         if (target != null)
         {
             if(target != lastTarget || lastTarget == null)
             {
                 newTarget = true;
+                targetMarker.transform.localScale = baseScale;
             }
 
             lastTarget = target;
             targetMarker.SetActive(true);
             Vector3 enemyDirection = (target.GetComponent<Health>().GetCore().transform.position - playerCamera.transform.position).normalized;
             targetMarker.transform.position = Vector3.Lerp(targetMarker.transform.position, playerCamera.transform.position - (enemyDirection * -distanceFromCamera), Time.deltaTime * 20);
-            if (mainScale.magnitude >= baseScale.magnitude * 0.8f || !newTarget)
+            if (mainScale.magnitude >= baseScale.magnitude * 0.95f || !newTarget)
             {
-                targetMarker.transform.localScale = Vector3.Lerp(targetMarker.transform.localScale, baseScale * 0.25f, Time.deltaTime * 10);
+                targetMarker.transform.localScale = Vector3.Lerp(targetMarker.transform.localScale, baseScale * 0.1f, Time.deltaTime * 4);
+
+                float s = 1 - (targetMarker.transform.localScale.x / (baseScale.x));
+                autoAim.color = gradient.Evaluate(s); 
+
                 newTarget = false;
                 mainScale = targetMarker.transform.localScale;
             }
@@ -235,5 +247,7 @@ public class GunBase : MonoBehaviour
                 break;
         }
     }
+
+
 }
 
