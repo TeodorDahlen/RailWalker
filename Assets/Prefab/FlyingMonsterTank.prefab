@@ -2960,6 +2960,9 @@ PrefabInstance:
       addedObject: {fileID: 7365900051301865671}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 36df015d0181e8e49b38642ba99fdf3b, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 4698486084395871226}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 36df015d0181e8e49b38642ba99fdf3b, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1104870621995955704}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 36df015d0181e8e49b38642ba99fdf3b, type: 3}
       insertIndex: -1
@@ -2996,6 +2999,7 @@ MonoBehaviour:
   phase: 0
   Target: {fileID: 0}
   EnemySail: {fileID: 5532865490595265383}
+  attackEffect: {fileID: 0}
 --- !u!114 &7365900051301865671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3012,6 +3016,18 @@ MonoBehaviour:
   currentHealth: 0
   DeathEffect: {fileID: 9126353107128586163, guid: 4085ef945974d4f4ca764c8f1bb10c85, type: 3}
   Core: {fileID: 7097888695289734508}
+--- !u!114 &4698486084395871226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829848086277455606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810f270b1491c03498f6ea590c984169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1104870621995955704
 BoxCollider:
   m_ObjectHideFlags: 0
