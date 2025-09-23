@@ -192,6 +192,7 @@ public class GunBase : MonoBehaviour
     private IEnumerator Reload()
     {
         audioSource.PlayOneShot(reloadSound);
+        animator.SetTrigger("Reload");
         yield return new WaitForSeconds(reloadSpeed);
         currentBullets = maxBullets;
         UpdateAmmoCounter();
