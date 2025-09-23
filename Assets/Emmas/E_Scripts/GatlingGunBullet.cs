@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class GatlingGunBullet : MonoBehaviour
 {
@@ -51,9 +50,6 @@ public class GatlingGunBullet : MonoBehaviour
         currentSpeed = maxSpeed * (1f - Mathf.Exp(-2f * t));
 
         transform.position += direction.normalized * currentSpeed * Time.deltaTime;
-
-
-
     }
 
     void LateUpdate()
@@ -88,7 +84,7 @@ public class GatlingGunBullet : MonoBehaviour
         {
             return;
         }
-        
+
         objectPool.ReturnObject(gameObject);
         Debug.Log("Gatling Bullet hit: " + other.gameObject.name);
     }
