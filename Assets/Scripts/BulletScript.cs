@@ -6,7 +6,7 @@ public class BulletScript : MonoBehaviour
     [SerializeField]
     private float Damage;
 
-    [SerializeField] private float maxSpeed = 20f;        
+    [SerializeField] private float maxSpeed = 20f;
     [SerializeField] private float accelerationTime = 2f;
     [SerializeField] public Vector3 direction;
 
@@ -14,16 +14,17 @@ public class BulletScript : MonoBehaviour
     private float elapsedTime = 0f;
 
     private AudioSource audioSource;
+
     [SerializeField]
     private AudioClip shootingSound;
     private float baseAudioStrenght;
 
     private void Start()
     {
-        Destroy(gameObject, 5);
+        //Destroy(gameObject, 5);
         direction = transform.forward;
-        
-        if(GetComponent<AudioSource>() != null)
+
+        if (GetComponent<AudioSource>() != null)
         {
             audioSource = GetComponent<AudioSource>();
             baseAudioStrenght = audioSource.volume;
@@ -33,13 +34,14 @@ public class BulletScript : MonoBehaviour
     private void Update()
     {
         elapsedTime += Time.deltaTime;
-    
+
         // Exponential-like increase
         // At t=0 -> 0, at t=accelerationTime -> ~0.95 maxSpeed
         float t = Mathf.Clamp01(elapsedTime / accelerationTime);
         currentSpeed = maxSpeed * (1f - Mathf.Exp(-2f * t));
 
         transform.position += direction.normalized * currentSpeed * Time.deltaTime;
+
     }
 
     private void PlayShooting()
@@ -51,7 +53,7 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<ExplodingCacti>() != null)
+        if (other.GetComponent<ExplodingCacti>() != null)
         {
             other.GetComponent<ExplodingCacti>().Explode();
         }

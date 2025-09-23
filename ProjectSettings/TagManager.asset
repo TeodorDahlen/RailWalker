@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - PlayerHand
+  - QDSUIBackplateGradient
+  - QDSUISecondaryButton
+  - QDSUIIcon
+  - ShootFlag
+  - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX

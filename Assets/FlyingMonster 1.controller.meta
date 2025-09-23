@@ -1,8 +1,12 @@
 fileFormatVersion: 2
-guid: 4f06b2acc5c47954b93e81ef51e45ead
+<<<<<<<< HEAD:Assets/FlyingMonster 1.controller.meta
+guid: c0fc8c5dbf7ad544c97a9243512a99af
+========
+guid: 91a00e50d740efd4098b450f52ba1e9f
+>>>>>>>> origin/Sam:Assets/Resources/DOTweenSettings.asset.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 9100000
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
