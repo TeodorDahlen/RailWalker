@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -10,6 +11,9 @@ public class Health : MonoBehaviour
     [Header("Death Effects")]
     [SerializeField]
     private GameObject DeathEffect;
+
+    [SerializeField]
+    private GameObject Core;
 
     private void Start()
     {
@@ -34,4 +38,23 @@ public class Health : MonoBehaviour
         Destroy(newEffect, 2);
         Destroy(gameObject);
     }
+
+    public float GetHealth()
+    {
+        return currentHealth;   
+    }
+
+
+    public GameObject GetCore()
+    {
+        if (Core != null)
+        {
+            return Core;
+        }
+        else
+        {
+            return gameObject;
+        }
+    }
+
 }
