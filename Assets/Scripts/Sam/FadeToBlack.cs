@@ -6,6 +6,7 @@ using System.Collections;
 public class FadeToBlack : MonoBehaviour
 {
     public static FadeToBlack Instance;
+
     public OVRScreenFade screenFade;
     private int delayToLight = 3;
     public bool darkness = false;
