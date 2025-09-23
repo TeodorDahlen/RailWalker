@@ -2992,6 +2992,7 @@ MonoBehaviour:
   phase: 0
   Target: {fileID: 0}
   EnemySail: {fileID: 5532865490595265383}
+  attackEffect: {fileID: 4154188797642464329, guid: 9960ca0cbead082458a929a446e3c437, type: 3}
 --- !u!114 &7365900051301865671
 MonoBehaviour:
   m_ObjectHideFlags: 0
