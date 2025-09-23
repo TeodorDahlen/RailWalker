@@ -53,8 +53,12 @@ public class GatlingGunBullet : MonoBehaviour
         transform.position += direction.normalized * currentSpeed * Time.deltaTime;
 
 
-        BulletLifeTime();
 
+    }
+
+    void LateUpdate()
+    {
+        BulletLifeTime();
     }
 
     public void SetPool(ObjectPool pool)
@@ -80,10 +84,12 @@ public class GatlingGunBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ExplodingCacti>() != null)
+        if (other.CompareTag("Player") || other.CompareTag("Ground"))
         {
-            other.GetComponent<ExplodingCacti>().Explode();
-            objectPool.ReturnObject(gameObject);
+            return;
         }
+        
+        objectPool.ReturnObject(gameObject);
+        Debug.Log("Gatling Bullet hit: " + other.gameObject.name);
     }
 }

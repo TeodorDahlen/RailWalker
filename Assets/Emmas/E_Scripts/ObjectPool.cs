@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//NOTE: Tags are important for this script to work properly
+//NOTE: Bullet returns to pool on collision with anything except Player and Ground, and after a set time (found in gatling gun bullet script)
 public class ObjectPool : MonoBehaviour
 {
     public GameObject prefab;
@@ -14,7 +16,7 @@ public class ObjectPool : MonoBehaviour
 
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject obj = Instantiate(prefab);
+            GameObject obj = Instantiate(prefab, transform);
             obj.SetActive(false);
             poolOfObjects.Add(obj);
         }
@@ -32,7 +34,7 @@ public class ObjectPool : MonoBehaviour
             }
         }
 
-        GameObject newObj = Instantiate(prefab);
+        GameObject newObj = Instantiate(prefab, transform);
         Debug.Log("Pool exhausted, instantiating new object");
         newObj.SetActive(true);
         poolOfObjects.Add(newObj);

@@ -9,6 +9,8 @@ TagManager:
   - QDSUISecondaryButton
   - QDSUIIcon
   - ShootFlag
+  - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
