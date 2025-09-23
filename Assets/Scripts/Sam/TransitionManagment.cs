@@ -1,10 +1,11 @@
 using NaughtyAttributes;
+using NaughtyAttributes;
 using Oculus.Interaction;
+using System;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
 using static Oculus.Interaction.TransformerUtils;
-using NaughtyAttributes;
-using System;
 
 public class TransitionManagment : MonoBehaviour
 {
@@ -13,14 +14,12 @@ public class TransitionManagment : MonoBehaviour
 
     //will need to get players transform for to be able to change the position
 
-    public GameObject choChoSpak;
-    public Transform chochoTransform;
-    public UnityEvent onPress;
-    public UnityEvent onRelease;
 
-    public GameObject cameraShovel;
-    public GameObject cameraMech;
-    public OVRCameraRig cameraRig;
+    [SerializeField] Transform mechCameraRigPosition, shovelCameraRigPosition;
+
+    // public GameObject cameraShovel;
+    // public GameObject cameraMech;
+    public Transform cameraRig;
     public GameObject gunInHand;
     public GameObject gunInHand2;
 
@@ -28,23 +27,23 @@ public class TransitionManagment : MonoBehaviour
     public GameObject shovelInteract;
 
     private Vector3 mechposition;
-    private Vector3 shovelPos;
+    public Vector3 shovelPos;
 
     GameObject presser;
     AudioSource sound;
-    bool isPressed = false;
 
     private double maxconstrain = 0.1;
-    private double stopHere;
+   [SerializeField] private float stopHere;
 
     //ACTION EVENTS
     //subscrib is in controllermappingmanager
     public event Action mechTransis;
     public event Action shovelTransis;
 
+    public float orgpos;
+
     private void Start()
     {
-        isPressed = false;
 
         if (Instance == null)
         {
@@ -55,55 +54,16 @@ public class TransitionManagment : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        /*
         foreach (Transform child in cameraShovel.transform)
         {
             child.gameObject.SetActive(false);
         }
+        */
+
         gunPewInteract.gameObject.SetActive(true);
         shovelInteract.gameObject.SetActive(false);
 
-        stopHere = chochoTransform.transform.position.y - 0.1;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!isPressed)
-        {
-            if (chochoTransform.transform.position.y <= stopHere)
-            {
-                // isPressed = other.gameObject;
-                //onPress.Invoke();
-                //sound.Play();
-                //isPressed = true;
-                Debug.Log("hello");
-                ActivateMech();
-            }
-        }
-    }
-
-    private void Update()
-    {
-        //utkommenterad för har ingen chocho spak här än
-
-        //if (chochoTransform.transform.position.y <= stopHere)
-        //{
-        //    isPressed = other.gameObject;
-        //    onPress.Invoke();
-        //    sound.Play();
-        //    isPressed = true;
-        //    Debug.Log("Mech time pew");
-        //}
-    }
-
-
-    [Button]
-    private void thing()
-    {
-        //world pos + position constrains
-        Debug.Log($"possition of chocho is: {chochoTransform.transform.position}");
-
-        Debug.Log($"will stop at possition: {chochoTransform.transform.position.y - 0.1}");
     }
 
     [Button]
@@ -111,10 +71,14 @@ public class TransitionManagment : MonoBehaviour
     {
         gunPewInteract.gameObject.SetActive(true);
         shovelInteract.gameObject.SetActive(false);
-        isPressed = false;
 
         mechTransis?.Invoke();
-        cameraRig.transform.position = mechposition;
+        // cameraRig.transform.position = mechposition;
+
+
+        cameraRig.transform.position = mechCameraRigPosition.position;
+
+
         ActivatePewPew();
     }
 
@@ -127,11 +91,13 @@ public class TransitionManagment : MonoBehaviour
 
         DeactivatePewPew();
 
-        mechposition = cameraMech.transform.position;
+        // mechposition = cameraMech.transform.position;
 
-        shovelPos = cameraShovel.transform.position;
+        // shovelPos = cameraShovel.transform.position;
 
-        cameraRig.transform.position = shovelPos;
+        // cameraRig.transform.position = shovelPos;
+
+        cameraRig.transform.position = shovelCameraRigPosition.position;
     }
 
     public void ActivatePewPew()
