@@ -56,11 +56,8 @@ public class BasicMonsterMovement : MonoBehaviour
             audioSource.pitch = Random.Range(0.95f, 1.05f);
             audioSource.volume = baseVolume * Random.Range(0.9f, 1.1f);
             audioSource.Play();
-            if(attackEffect != null)
-            {
-                GameObject newVFX = Instantiate(attackEffect, transform.position, Quaternion.identity);
-                Destroy(newVFX, 0.5f);
-            }
+            GameObject newVFX = Instantiate(attackEffect, transform.position, Quaternion.identity);
+            Destroy(newVFX, 0.5f);
             hasPlayedAudio = true;
         }
 
