@@ -20,7 +20,7 @@ public class Test_getContainer : MonoBehaviour
         }
 
       Debug.Log("spawning container");
-      FadeToBlack.Instance.FadeToDarkness();
+      FadeToBlack.Instance.FadeToDarkness(transis.nothing);
         
     }
 
