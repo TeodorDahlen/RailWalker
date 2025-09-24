@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GatlingGunBullet : MonoBehaviour
+public class ReusableBullet : MonoBehaviour
 {
     [SerializeField]
     private float Damage;
@@ -68,5 +68,5 @@ public class GatlingGunBullet : MonoBehaviour
 
         objectPool.ReturnObject(gameObject);
         Debug.Log("Gatling Bullet hit: " + other.gameObject.name);
-    }
+    } 
 }

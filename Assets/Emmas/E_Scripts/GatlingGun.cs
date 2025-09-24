@@ -93,7 +93,7 @@ public class GatlingGun : MonoBehaviour
         bullet.transform.rotation = shootingPoint.transform.rotation;
 
         // Tell the bullet which pool it belongs to
-        bullet.GetComponent<GatlingGunBullet>().SetPool(bulletPool);
+        bullet.GetComponent<ReusableBullet>().SetPool(bulletPool);
 
 
         if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, hitLayers))
@@ -149,7 +149,6 @@ public class GatlingGun : MonoBehaviour
             StopFiring();
             Debug.Log("Cancel");
         }
-
     }
 }
 
