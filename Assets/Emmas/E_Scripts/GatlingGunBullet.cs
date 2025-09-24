@@ -15,24 +15,12 @@ public class GatlingGunBullet : MonoBehaviour
     private float elapsedTime = 0f;
     private ObjectPool objectPool;
 
-    private AudioSource audioSource;
-
-    [SerializeField]
-    private AudioClip shootingSound;
-    private float baseAudioStrenght;
 
     private void Start()
     {
         objectPool = FindFirstObjectByType<ObjectPool>();
 
         direction = transform.forward;
-
-        if (GetComponent<AudioSource>() != null)
-        {
-            audioSource = GetComponent<AudioSource>();
-            baseAudioStrenght = audioSource.volume;
-            PlayShooting();
-        }
     }
 
     private void OnEnable()
@@ -69,13 +57,6 @@ public class GatlingGunBullet : MonoBehaviour
         {
             objectPool.ReturnObject(gameObject);
         }
-    }
-
-    private void PlayShooting()
-    {
-        audioSource.pitch = Random.Range(0.95f, 1.05f);
-        audioSource.volume = baseAudioStrenght * Random.Range(0.9f, 1.1f);
-        audioSource.Play();
     }
 
     private void OnTriggerEnter(Collider other)
