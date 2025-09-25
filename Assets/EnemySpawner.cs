@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy()
+    public void SpawnEnemy()
     {
         float randomX = Random.Range(-spawnAreaRange, spawnAreaRange);
         float randomZ = Random.Range(-spawnAreaRange, spawnAreaRange);

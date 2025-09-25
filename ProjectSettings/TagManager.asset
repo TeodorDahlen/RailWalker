@@ -11,6 +11,7 @@ TagManager:
   - ShootFlag
   - Enemy
   - Ground
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX

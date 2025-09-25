@@ -4,13 +4,24 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
+using NaughtyAttributes;
 
 public class GunBase : MonoBehaviour
 {
+    public bool autoAimOn;
+
     [SerializeField]
-    private GameObject Projectile;
+    private ObjectPool bulletPool; //Added pool for regular bullets /Emma
+
     [SerializeField]
-    private GameObject AutoProjectile;
+    private ObjectPool autoBulletPool; //Added Pool for autoBullets / Emma
+
+    // [SerializeField]
+    // private GameObject Projectile; //Pool Handles Bullet prefabs /Emma
+
+    // [SerializeField]
+    // private GameObject AutoProjectile; //Pool Handles Bullet prefabs /Emma
 
     [SerializeField]
     private GameObject ShootingVFX;
@@ -61,7 +72,8 @@ public class GunBase : MonoBehaviour
     [SerializeField]
     private GameObject reloadSpot;
 
-    private bool reloadStarted;
+    [HideInInspector]
+    public bool reloadStarted;
 
     [SerializeField]
     private AudioClip reloadSound;
@@ -75,6 +87,11 @@ public class GunBase : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private Image autoAim;
+
+    [SerializeField]
+    private Gradient gradient;
 
     private void Start()
     {
@@ -102,21 +119,26 @@ public class GunBase : MonoBehaviour
             target = null;
         }
 
-        mainScale = Vector3.Lerp(mainScale, baseScale, Time.deltaTime * 15);
+        mainScale = Vector3.Lerp(mainScale, baseScale, Time.deltaTime * 25);
         if (target != null)
         {
-            if(target != lastTarget || lastTarget == null)
+            if (target != lastTarget || lastTarget == null)
             {
                 newTarget = true;
+                targetMarker.transform.localScale = baseScale;
             }
 
             lastTarget = target;
             targetMarker.SetActive(true);
             Vector3 enemyDirection = (target.GetComponent<Health>().GetCore().transform.position - playerCamera.transform.position).normalized;
             targetMarker.transform.position = Vector3.Lerp(targetMarker.transform.position, playerCamera.transform.position - (enemyDirection * -distanceFromCamera), Time.deltaTime * 20);
-            if (mainScale.magnitude >= baseScale.magnitude * 0.8f || !newTarget)
+            if (mainScale.magnitude >= baseScale.magnitude * 0.95f || !newTarget)
             {
-                targetMarker.transform.localScale = Vector3.Lerp(targetMarker.transform.localScale, baseScale * 0.25f, Time.deltaTime * 10);
+                targetMarker.transform.localScale = Vector3.Lerp(targetMarker.transform.localScale, baseScale * 0.1f, Time.deltaTime * 4);
+
+                float s = 1 - (targetMarker.transform.localScale.x / (baseScale.x));
+                autoAim.color = gradient.Evaluate(s);
+
                 newTarget = false;
                 mainScale = targetMarker.transform.localScale;
             }
@@ -125,7 +147,7 @@ public class GunBase : MonoBehaviour
                 targetMarker.transform.localScale = mainScale;
             }
             targetMarker.transform.LookAt(playerCamera.transform.position);
-            
+
         }
         else
         {
@@ -149,13 +171,15 @@ public class GunBase : MonoBehaviour
             newVfx.GetComponent<EffectLookAtPlayer>().Target = Camera.main.gameObject;
             Destroy(newVfx, 1.0f);
             //audioSource.PlayOneShot(clickAudio);
-           
+
         }
         else
         {
             currentBullets--;
             animator.SetTrigger("Fire");
             UpdateAmmoCounter();
+
+            //Pool Added here
             if (target != null)
             {
                 Health hp = target.GetComponent<Health>();
@@ -168,23 +192,61 @@ public class GunBase : MonoBehaviour
 
                 Vector3 AutoAimDirection = hp.GetCore().transform.position - ShootingPoint.transform.position;
                 ShootingPoint.transform.forward = AutoAimDirection.normalized;
-                GameObject newBullet = Instantiate(AutoProjectile, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
+
+                GameObject newBullet = autoBulletPool.GetGameObject();
+                newBullet.transform.position = ShootingPoint.transform.position;
+                newBullet.transform.rotation = ShootingPoint.transform.rotation;
+
                 newBullet.GetComponent<AutoBullet>().target = hp.GetCore();
 
                 GameObject newVFX2 = Instantiate(ShootingVFX, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
                 Destroy(newVFX2, 0.5f);
                 return;
-
             }
+
             ShootingPoint.transform.rotation = transform.rotation;
-            Instantiate(Projectile, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
+            GameObject regularBullet = bulletPool.GetGameObject();
+            regularBullet.transform.position = ShootingPoint.transform.position;
+            regularBullet.transform.rotation = ShootingPoint.transform.rotation;
 
             GameObject newVFX = Instantiate(ShootingVFX, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
             Destroy(newVFX, 0.5f);
-            if(reloadStarted == true)
+
+            if (reloadStarted == true)
             {
                 reloadStarted = false;
             }
+
+
+            //     if (target != null)
+            //     {
+            //         Health hp = target.GetComponent<Health>();
+            //         if (hp.GetHealth() <= 10)
+            //         {
+            //             DeadTarget.Add(hp.gameObject);
+            //             hp.gameObject.layer = LayerMask.NameToLayer("Default");
+            //             targetMarker.transform.localScale = baseScale * 1.25f;
+            //         }
+
+            //         Vector3 AutoAimDirection = hp.GetCore().transform.position - ShootingPoint.transform.position;
+            //         ShootingPoint.transform.forward = AutoAimDirection.normalized;
+            //         GameObject newBullet = Instantiate(AutoProjectile, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
+            //         newBullet.GetComponent<AutoBullet>().target = hp.GetCore();
+
+            //         GameObject newVFX2 = Instantiate(ShootingVFX, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
+            //         Destroy(newVFX2, 0.5f);
+            //         return;
+
+            //     }
+            //     ShootingPoint.transform.rotation = transform.rotation;
+            //     Instantiate(Projectile, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
+
+            //     GameObject newVFX = Instantiate(ShootingVFX, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
+            //     Destroy(newVFX, 0.5f);
+            //     if(reloadStarted == true)
+            //     {
+            //         reloadStarted = false;
+            //     }
         }
     }
 
@@ -235,5 +297,31 @@ public class GunBase : MonoBehaviour
                 break;
         }
     }
+
+    [Button]
+    public void TestShoot()
+    {
+        if (!autoAimOn)
+        {
+            target = null;
+            Shoot();
+            Debug.Log("Testing regular shoot");
+        }
+        else
+        {
+            target = FindFirstObjectByType<Health>()?.gameObject;
+            if (target != null)
+            {
+                Shoot();
+                Debug.Log("Testing auto-aim shoot at " + target.name);
+            }
+            else
+            {
+                Debug.LogWarning("No Health object found to auto-aim at!");
+            }
+        }
+
+    }
+
 }
 
