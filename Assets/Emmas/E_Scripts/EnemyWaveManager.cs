@@ -95,8 +95,6 @@ public class EnemyWaveManager : MonoBehaviour
 
     public void UpdateEnemyCount()
     {
-
-
         enemiesRemaining--;
         Debug.Log(enemiesRemaining + " enemies remaining in wave " + currentWave);
 
@@ -113,7 +111,9 @@ public class EnemyWaveManager : MonoBehaviour
         currentWave++;
         waveEnemyTotalCount = CalculateEnemyWaveCount();
         enemiesRemaining = waveEnemyTotalCount;
+
         yield return new WaitForSeconds(timeBetweenWaves);
+        
         StartCoroutine(StartWave());
     }
 
