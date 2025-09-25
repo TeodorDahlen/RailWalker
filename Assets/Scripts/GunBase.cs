@@ -137,7 +137,7 @@ public class GunBase : MonoBehaviour
                 targetMarker.transform.localScale = Vector3.Lerp(targetMarker.transform.localScale, baseScale * 0.1f, Time.deltaTime * 4);
 
                 float s = 1 - (targetMarker.transform.localScale.x / (baseScale.x));
-                autoAim.color = gradient.Evaluate(s);
+                //autoAim.color = gradient.Evaluate(s); //Commented out by Emma, got errors
 
                 newTarget = false;
                 mainScale = targetMarker.transform.localScale;

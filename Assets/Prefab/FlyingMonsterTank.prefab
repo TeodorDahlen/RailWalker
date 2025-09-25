@@ -2999,7 +2999,7 @@ MonoBehaviour:
   phase: 0
   Target: {fileID: 0}
   EnemySail: {fileID: 5532865490595265383}
-  attackEffect: {fileID: 0}
+  attackEffect: {fileID: 4154188797642464329, guid: 9960ca0cbead082458a929a446e3c437, type: 3}
 --- !u!114 &7365900051301865671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3028,6 +3028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810f270b1491c03498f6ea590c984169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyWaveManager: {fileID: 0}
 --- !u!65 &1104870621995955704
 BoxCollider:
   m_ObjectHideFlags: 0
