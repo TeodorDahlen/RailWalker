@@ -6072,7 +6072,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ec92e3dcc95e441960f00f2127e18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 0}
+  autoAimOn: 0
+  bulletPool: {fileID: 0}
+  autoBulletPool: {fileID: 0}
   ShootingVFX: {fileID: 0}
   ShootingPoint: {fileID: 1076883445}
   radius: 0.5
@@ -6080,6 +6082,52 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  DeadTarget: []
+  targetMarker: {fileID: 0}
+  playerCamera: {fileID: 0}
+  distanceFromCamera: 2
+  maxBullets: 6
+  reloadSpeed: 3
+  reloadVFX: {fileID: 0}
+  reloadSpot: {fileID: 0}
+  reloadStarted: 0
+  reloadSound: {fileID: 0}
+  AmmoNumbers: []
+  animator: {fileID: 0}
+  autoAim: {fileID: 0}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
 --- !u!1 &305969550
 GameObject:
   m_ObjectHideFlags: 0
@@ -33270,76 +33318,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f84b6a5a5dca844c8cf086c31216feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1555939477
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1555939479}
-  - component: {fileID: 1555939478}
-  - component: {fileID: 1555939480}
-  m_Layer: 0
-  m_Name: Managment
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1555939478
+--- !u!114 &1555939478 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+  m_PrefabInstance: {fileID: 492622079973516515}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555939477}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc1df73efdc795e4c90023f19a1fc899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechCameraRigPosition: {fileID: 718455280}
-  shovelCameraRigPosition: {fileID: 1018818288}
-  cameraRig: {fileID: 2075718421}
-  gunInHand: {fileID: 1410176984}
-  gunInHand2: {fileID: 1172805226}
-  gunPewInteract: {fileID: 207929402}
-  shovelInteract: {fileID: 11410707}
-  shovelPos: {x: 0, y: 0, z: 0}
-  stopHere: 0
-  orgpos: 0
---- !u!4 &1555939479
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555939477}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9335629, y: 1.3933307, z: -36.10193}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1555939480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555939477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2421b69048291438ad436c0dd6c736, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  activateWhenShovel: {fileID: 1943615881}
-  activateWhenShovel2: {fileID: 406310105}
 --- !u!1 &1559187082
 GameObject:
   m_ObjectHideFlags: 0
@@ -48565,6 +48554,99 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1694420971}
   m_SourcePrefab: {fileID: 100100000, guid: 0f37ecaa93078dc4f89181ec380641d8, type: 3}
+--- !u!1001 &492622079973516515
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9335629
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3933307
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -36.10193
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709504611361238402, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: activateWhenShovel
+      value: 
+      objectReference: {fileID: 1943615881}
+    - target: {fileID: 1709504611361238402, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: activateWhenShovel2
+      value: 
+      objectReference: {fileID: 406310105}
+    - target: {fileID: 5353654285269002413, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: m_Name
+      value: Managment
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: cameraRig
+      value: 
+      objectReference: {fileID: 2075718421}
+    - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: gunInHand
+      value: 
+      objectReference: {fileID: 1410176984}
+    - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: gunInHand2
+      value: 
+      objectReference: {fileID: 1172805226}
+    - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: gunPewInteract
+      value: 
+      objectReference: {fileID: 207929402}
+    - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: shovelInteract
+      value: 
+      objectReference: {fileID: 11410707}
+    - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: mechCameraRigPosition
+      value: 
+      objectReference: {fileID: 718455280}
+    - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: shovelCameraRigPosition
+      value: 
+      objectReference: {fileID: 1018818288}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
 --- !u!1001 &2912922176980216801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48721,7 +48803,7 @@ SceneRoots:
   - {fileID: 613307461}
   - {fileID: 572556183}
   - {fileID: 1937635525}
-  - {fileID: 1555939479}
+  - {fileID: 492622079973516515}
   - {fileID: 1316098605}
   - {fileID: 1136221525}
   - {fileID: 109866827}
