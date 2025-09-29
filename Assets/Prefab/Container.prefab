@@ -155,7 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  currentHealth: 0
   DeathEffect: {fileID: 0}
+  Core: {fileID: 0}
 --- !u!114 &338346977228736751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,3 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5656333112923644888a378da8eec925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rend: {fileID: 8374296531320579413}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  GotResources: 0
