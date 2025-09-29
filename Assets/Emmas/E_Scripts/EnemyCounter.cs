@@ -1,25 +1,21 @@
 using UnityEngine;
 
-//TODO: Call UpdateEnemyCount() on EnemyWaveManager when an enemy is destroyed
-//TODO: Update enemy count in EnemyWaveManager when an enemy is spawned
 public class EnemyCounter : MonoBehaviour
 {
-    [SerializeField]
     private EnemyWaveManager enemyWaveManager;
 
-    private void Start()
+    public void Register(EnemyWaveManager manager)
     {
-        enemyWaveManager = FindFirstObjectByType<EnemyWaveManager>();
+        enemyWaveManager = manager;
 
-        if (enemyWaveManager == null)
+        if (enemyWaveManager != null)
         {
-            Debug.LogError("EnemyWaveManager reference not set in EnemyCounter script on " + gameObject.name);
+            enemyWaveManager.EnemySpawned();
         }
-    }
-
-    public GameObject CalculateEnemyCount()
-    {
-        return gameObject;
+        else
+        {
+            Debug.LogError("EnemyWaveManager reference missing when registering enemy: " + gameObject.name);
+        }
     }
 
     private void OnDestroy()
