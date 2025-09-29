@@ -25482,9 +25482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWave: 1
   waveMultiplier: 2
-  waveEnemyTotalCount: 0
-  enemiesRemaining: 0
-  enemiesInScene: []
   player: {fileID: 132509577}
   enemySpawner: []
   enemySpawnerScript: []

@@ -22,14 +22,9 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField]
     private int waveMultiplier = 5;
 
-    [SerializeField]
-    private int waveEnemyTotalCount;
 
-    [SerializeField]
-    private int enemiesRemaining;
-
-    [SerializeField]
-    private List<EnemyCounter> enemiesInScene;
+    // [SerializeField]
+    // private List<EnemyCounter> enemiesInScene;
 
     [Header("References")]
 
@@ -42,6 +37,8 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField]
     private List<EnemyWave> enemySpawnerScript;
     private float timeBetweenWaves = 5f;
+    private int waveEnemyTotalCount;
+    private int enemiesRemaining;
 
     void Start()
     {
@@ -96,7 +93,7 @@ public class EnemyWaveManager : MonoBehaviour
     public void UpdateEnemyCount()
     {
         enemiesRemaining--;
-        Debug.Log(enemiesRemaining + " enemies remaining in wave " + currentWave);
+        //Debug.Log(enemiesRemaining + " enemies remaining in wave " + currentWave);
 
         if (enemiesRemaining <= 0)
         {
