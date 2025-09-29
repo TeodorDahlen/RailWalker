@@ -109,6 +109,6 @@ public class ReusableBullet : MonoBehaviour
         }
 
         objectPool.ReturnObject(gameObject);
-        Debug.Log("Gatling Bullet hit: " + other.gameObject.name);
+        Debug.Log("Bullet hit: " + other.gameObject.name);
     }
 }

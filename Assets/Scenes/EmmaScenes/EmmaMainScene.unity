@@ -1750,7 +1750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &148151825
 Transform:
   m_ObjectHideFlags: 0
@@ -4237,12 +4237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWave: 1
-  waveMultiplier: 5
-  waveEnemyTotalCount: 0
-  enemiesRemaining: 0
+  waveMultiplier: 2
   enemiesInScene: []
-  player: {fileID: 2075718420}
   enemySpawner: []
+  enemiesRemaining: 0
+  player: {fileID: 2075718420}
   enemySpawnerScript: []
 --- !u!1 &458447592
 GameObject:

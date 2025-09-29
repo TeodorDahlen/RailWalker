@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class Health : MonoBehaviour
 {
@@ -15,19 +16,34 @@ public class Health : MonoBehaviour
     [SerializeField]
     private GameObject Core;
 
+    [Header("Scripts")]
+    [SerializeField]
+    private Container containerScript;
+    private UIGoneTrain UIGoneTrainScript;
+
     private void Start()
     {
         currentHealth = maxHealth;
+
+        containerScript = GetComponent<Container>();
+
+        if (containerScript == null)
+        {
+            Debug.Log("container is null");
+        }
     }
+    
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+
         if (GetComponent<OnHitEffect>() != null)
         {
             GetComponent<OnHitEffect>().SpawnHit();
         }
         if (currentHealth <= 0)
         {
+
             PlayDeath();
         }
     }
