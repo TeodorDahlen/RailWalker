@@ -36588,109 +36588,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1775826621}
     m_Modifications:
     - target: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: fireRate
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: spinSpeed
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: Projectile
-      value: 
-      objectReference: {fileID: 1224074786929903618, guid: 3541cbd159937c54e9f6a40023a07f55, type: 3}
-    - target: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 607057497}
-    - target: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: spreadAngle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: useRandomSpread
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 355451525974757644, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 355451525974757644, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238140428843946709, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.96363235
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238140428843946709, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.0000013411042
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238140428843946709, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.00000050663937
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238140428843946709, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.26723155
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.data[1].Title
-      value: Release
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.data[1].InputActionReference
-      value: 
-      objectReference: {fileID: 5683876548870302784, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1872962390}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StopFiring
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GatlingGun, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681542225240553763, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3285095567152120463, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.035186373
-      objectReference: {fileID: 0}
-    - target: {fileID: 3285095567152120463, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.03518637
-      objectReference: {fileID: 0}
-    - target: {fileID: 3285095567152120463, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.035186373
-      objectReference: {fileID: 0}
     - target: {fileID: 3285095567152120463, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0974
@@ -36731,26 +36631,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.307
       objectReference: {fileID: 0}
-    - target: {fileID: 3338418764129446576, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3689299973610936544, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: fd4444470b50cc44aa2ca0c82465433c, type: 2}
     - target: {fileID: 8040863889240439668, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
       propertyPath: m_Name
       value: GatlingGrab
       objectReference: {fileID: 0}
-    - target: {fileID: 8040863889240439668, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8954055633394172635, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: fd4444470b50cc44aa2ca0c82465433c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

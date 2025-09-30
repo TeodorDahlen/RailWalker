@@ -176,7 +176,6 @@ public class GunBase : MonoBehaviour
             newVfx.GetComponent<EffectLookAtPlayer>().Target = Camera.main.gameObject;
             Destroy(newVfx, 1.0f);
             //audioSource.PlayOneShot(clickAudio);
-
         }
         else
         {
