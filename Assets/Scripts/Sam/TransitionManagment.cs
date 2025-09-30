@@ -23,9 +23,6 @@ public class TransitionManagment : MonoBehaviour
     public GameObject gunInHand;
     public GameObject gunInHand2;
 
-    public GameObject gunPewInteract;
-    public GameObject shovelInteract;
-
     private Vector3 mechposition;
     public Vector3 shovelPos;
 
@@ -61,23 +58,15 @@ public class TransitionManagment : MonoBehaviour
         }
         */
 
-        gunPewInteract.gameObject.SetActive(true);
-        shovelInteract.gameObject.SetActive(false);
 
     }
 
     [Button]
     public void ActivateMech()
     {
-        gunPewInteract.gameObject.SetActive(true);
-        shovelInteract.gameObject.SetActive(false);
-
         mechTransis?.Invoke();
-        // cameraRig.transform.position = mechposition;
 
-
-        cameraRig.transform.position = mechCameraRigPosition.position;
-
+        cameraRig.transform.position = mechCameraRigPosition.transform.position;
 
         ActivatePewPew();
     }
@@ -85,19 +74,11 @@ public class TransitionManagment : MonoBehaviour
     [Button]
     public void ActivateShovel()
     {
-        gunPewInteract.gameObject.SetActive(false);
-        shovelInteract.gameObject.SetActive(true);
         shovelTransis?.Invoke();
 
         DeactivatePewPew();
 
-        // mechposition = cameraMech.transform.position;
-
-        // shovelPos = cameraShovel.transform.position;
-
-        // cameraRig.transform.position = shovelPos;
-
-        cameraRig.transform.position = shovelCameraRigPosition.position;
+        cameraRig.transform.position = shovelCameraRigPosition.transform.position;
     }
 
     public void ActivatePewPew()

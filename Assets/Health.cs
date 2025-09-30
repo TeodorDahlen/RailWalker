@@ -26,12 +26,8 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
 
         containerScript = GetComponent<Container>();
-
-        if (containerScript == null)
-        {
-            Debug.Log("container is null");
-        }
     }
+
     
     public void TakeDamage(float damage)
     {

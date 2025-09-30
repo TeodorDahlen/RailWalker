@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class ControllerMappingManager : MonoBehaviour
 {
      public InputActionAsset inputActions;
+    //controller tracking left and right
     public GameObject activateWhenShovel;
     public GameObject activateWhenShovel2;
     
@@ -34,11 +35,12 @@ public class ControllerMappingManager : MonoBehaviour
     [Button]
     private void ShovelTime()
     {
+        Debug.LogWarning("shovel time changing interact map");
         shootMap.Disable();
         shovelInteractMap.Enable();
 
         activateWhenShovel.SetActive(true);
-        activateWhenShovel2 .SetActive(true);
+        activateWhenShovel2.SetActive(true);
 
 
         //foreach (Transform child in activateWhenShovel.transform)
@@ -55,6 +57,8 @@ public class ControllerMappingManager : MonoBehaviour
     [Button]
     private void MechTime()
     {
+        Debug.LogWarning("Mech time changing interact map");
+
         shootMap.Enable();
         shovelInteractMap.Disable();
 
