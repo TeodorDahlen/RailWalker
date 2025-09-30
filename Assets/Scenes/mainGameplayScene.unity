@@ -1329,7 +1329,7 @@ Transform:
   m_GameObject: {fileID: 94569047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.63491255, z: 0, w: 0.772584}
-  m_LocalPosition: {x: 12.732986, y: 2.5608149, z: -236.60323}
+  m_LocalPosition: {x: 12.732986, y: 2.071, z: -236.60323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7497,7 +7497,7 @@ Transform:
   m_GameObject: {fileID: 584332123}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -98.96162, y: -7.0184646, z: -120.3791}
+  m_LocalPosition: {x: 12.832, y: 1.033, z: -237.141}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15178,7 +15178,7 @@ Transform:
   m_GameObject: {fileID: 1194984738}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.80638885, y: -0.90148795, z: 0.7974167}
+  m_LocalPosition: {x: 12.832, y: 0.651, z: -237.141}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26967,6 +26967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWave: 1
   waveMultiplier: 2
+  timeBetweenWaves: 5
   player: {fileID: 132509577}
   enemySpawner: []
   enemySpawnerScript: []
