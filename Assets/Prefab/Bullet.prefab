@@ -4910,7 +4910,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.4
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -5161,7 +5161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2958614851250806055
 Transform:
   m_ObjectHideFlags: 0
@@ -5419,8 +5419,9 @@ MonoBehaviour:
   maxSpeed: 100
   accelerationTime: 0.2
   direction: {x: 0, y: 0, z: 0}
-  timeUntilDestruction: 1
+  timeUntilDestruction: 4
   shootingSound: {fileID: 8300000, guid: 02fb39473a9c289458a458e7f38dc60f, type: 3}
+  linerenderer: {fileID: 2556584929338858928}
 --- !u!114 &6482383528029513326
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -176,7 +176,6 @@ public class GunBase : MonoBehaviour
             newVfx.GetComponent<EffectLookAtPlayer>().Target = Camera.main.gameObject;
             Destroy(newVfx, 1.0f);
             //audioSource.PlayOneShot(clickAudio);
-
         }
         else
         {
@@ -203,7 +202,7 @@ public class GunBase : MonoBehaviour
                 newBullet.transform.rotation = ShootingPoint.transform.rotation;
 
                 newBullet.GetComponent<AutoBullet>().target = hp.GetCore();
-                newBullet.GetComponent<ReusableBullet>().direction = (transform.position - hp.GetCore().transform.position).normalized;
+                newBullet.GetComponent<ReusableBullet>().direction = (hp.GetCore().transform.position - transform.position).normalized;
                 GameObject newVFX2 = Instantiate(ShootingVFX, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
                 Destroy(newVFX2, 0.5f);
                 return;

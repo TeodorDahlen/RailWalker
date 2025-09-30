@@ -31,6 +31,8 @@ public class ReusableBullet : MonoBehaviour
 
     private float baseAudioStrenght; //From Teo's BulletScript
 
+    [SerializeField]
+    private GameObject linerenderer;
 
     private void Start()
     {
@@ -39,12 +41,12 @@ public class ReusableBullet : MonoBehaviour
         //From Teo's BulletScript{
         direction = transform.forward;
 
-        if (GetComponent<AudioSource>() != null)
-        {
-            audioSource = GetComponent<AudioSource>();
-            baseAudioStrenght = audioSource.volume;
-            PlayShooting();
-        }
+        //if (GetComponent<AudioSource>() != null)
+        //{
+        //    audioSource = GetComponent<AudioSource>();
+        //    baseAudioStrenght = audioSource.volume;
+        //    PlayShooting();
+        //}
         //}
     }
 
@@ -53,7 +55,7 @@ public class ReusableBullet : MonoBehaviour
     {
         audioSource.pitch = Random.Range(0.95f, 1.05f);
         audioSource.volume = baseAudioStrenght * Random.Range(0.9f, 1.1f);
-        audioSource.Play();
+        audioSource.PlayOneShot(audioSource.clip);
     }
     //}
 
@@ -62,6 +64,20 @@ public class ReusableBullet : MonoBehaviour
         elapsedTime = 0f;
         currentSpeed = 0f;
         //direction = transform.forward;
+
+        direction = transform.forward;
+        linerenderer.SetActive(false);
+        if (GetComponent<AudioSource>() != null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            baseAudioStrenght = audioSource.volume;
+            PlayShooting();
+            Invoke(nameof(TurnOnLine), 0.04f);
+        }
+    }
+    private void TurnOnLine()
+    {
+        linerenderer.SetActive(true);
     }
 
     private void Update()
@@ -108,7 +124,12 @@ public class ReusableBullet : MonoBehaviour
             other.GetComponent<ExplodingCacti>().Explode();
         }
 
+        Invoke(nameof(ReturnToPool), 2f);
+        //Debug.Log("Bullet hit: " + other.gameObject.name);
+    }
+
+    private void ReturnToPool()
+    {
         objectPool.ReturnObject(gameObject);
-        Debug.Log("Bullet hit: " + other.gameObject.name);
     }
 }

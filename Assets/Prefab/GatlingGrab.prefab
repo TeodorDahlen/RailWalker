@@ -277,7 +277,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.03963406, y: -0.035194, z: 0.70789, w: 0.7043312}
   m_LocalPosition: {x: -0.946, y: 1.109, z: 1.42}
-  m_LocalScale: {x: 0.55217, y: 0.55217, z: 0.55217}
+  m_LocalScale: {x: 0.035186373, y: 0.03518637, z: 0.035186373}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8019024069288498395}
@@ -470,6 +470,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3285095567152120463}
     m_Modifications:
+    - target: {fileID: 1170695402187102048, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fd4444470b50cc44aa2ca0c82465433c, type: 2}
     - target: {fileID: 3686275718714140580, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15921973
@@ -526,9 +530,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: GatlingGun
       objectReference: {fileID: 0}
+    - target: {fileID: 6867727383184543067, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fd4444470b50cc44aa2ca0c82465433c, type: 2}
+    - target: {fileID: 7535303018700899511, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535303018700899511, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: fireRate
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: spinSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
       propertyPath: spreadAngle
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785984986318266030, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: useRandomSpread
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.96363235
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000013411042
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00000050663937
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030514693404034926, guid: ec7af902dc591f4458b45a74ee78597e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.26723155
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -648,10 +692,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: GatlingGunControls
       objectReference: {fileID: 0}
+    - target: {fileID: 5951172399200004279, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[1].Title
+      value: Release
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[1].InputActionReference
+      value: 
+      objectReference: {fileID: 5683876548870302784, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
       propertyPath: _buttonClickActions.Array.data[0].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 31938045553298197}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 31938045553298197}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopFiring
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GatlingGun, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481943872018561828, guid: fee32c3995d67a341810a938f64509e9, type: 3}
+      propertyPath: _buttonClickActions.Array.data[1].Callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
