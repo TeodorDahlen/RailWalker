@@ -12,19 +12,14 @@ public class GatlingGun : MonoBehaviour
     [SerializeField] private float spinSpeed = 360f;
     [SerializeField] private Animation recoil;
 
-    // [SerializeField]
-    // private GameObject Projectile;
+    [Header("Bullet Settings")]
+    [SerializeField] private ObjectPool bulletPool;
+    [SerializeField] private GameObject ShootingVFX;
+    [SerializeField] private GameObject shootingPoint;
+    [SerializeField] private AmmoManager ammoManager;
+    public bool canFire = true;
 
-    [SerializeField]
-    private ObjectPool bulletPool;
-
-    [SerializeField]
-    private GameObject ShootingVFX;
-
-    [SerializeField]
-    private GameObject shootingPoint;
-
-
+    [Header("Raycast Settings")]
     public float radius = 0.5f;
     public float maxDistance = 1000f;
     public LayerMask hitLayers;
@@ -32,18 +27,37 @@ public class GatlingGun : MonoBehaviour
     private Vector3 originalLocalPos;
 
 
+    private bool CanShoot()
+    {
+        ammoManager.HasAmmo();
+        return ammoManager.HasAmmo() && canFire;
+    }
+
     //Start firing the gun at a set rate
     [Button]
     public void ConstantFire()
     {
-        if (shootingPoint != null)
+        canFire = CanShoot();
+
+        if (!canFire)
         {
-            // Start invoking the firing method at the specified fire rate
-            InvokeRepeating(nameof(FireFromRotatingPoint), 0f, fireRate);
-            InvokeRepeating(nameof(RotateBarrel), 0f, fireRate);
+            Debug.Log("Out of Ammo, need coal");
+            StopFiring();
         }
+
         else
-            Debug.LogWarning("GunBase or ShootingPoint not found on GatlingGun object.");
+        {
+            if (shootingPoint != null)
+            {
+                // Start invoking the firing method at the specified fire rate
+                InvokeRepeating(nameof(FireFromRotatingPoint), 0f, fireRate);
+                InvokeRepeating(nameof(RotateBarrel), 0f, fireRate);
+            }
+            else
+                Debug.LogWarning("GunBase or ShootingPoint not found on GatlingGun object.");
+
+        }
+
     }
 
     //Rotate the barrel object as gun fires
@@ -76,45 +90,57 @@ public class GatlingGun : MonoBehaviour
             shootingPoint.transform.localPosition = originalLocalPos;
     }
 
+
     /// <summary>
     /// Teos asabra gun base shoot method
     /// </summary>
     public void Shoot()
     {
-        RaycastHit hit;
-        Vector3 origin = shootingPoint.transform.position;
-        Vector3 direction = shootingPoint.transform.forward;
+        //Bool added to check if we can shoot based on heat in furnace
+        canFire = CanShoot();
 
-        //Debug.DrawLine(origin, direction * maxDistance, Color.red, 2);
-
-        // In GatlingGun.Shoot
-        GameObject bullet = bulletPool.GetGameObject();
-        bullet.transform.position = shootingPoint.transform.position;
-        bullet.transform.rotation = shootingPoint.transform.rotation;
-
-        // Tell the bullet which pool it belongs to
-        bullet.GetComponent<ReusableBullet>().SetPool(bulletPool);
-
-
-        if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, hitLayers))
+        if (canFire == false)
         {
-            //Debug.Log("Hit: " + hit.collider.name);
+            Debug.Log("StopFiring() triggered in Shoot(), need more coal");
+            StopFiring();
+            return;
         }
-        // shootingPoint.transform.rotation = transform.rotation;
-        // GameObject bullet = bulletPool.GetGameObject();
-        // bullet.transform.position = shootingPoint.transform.position;
-        // bullet.transform.rotation = shootingPoint.transform.rotation;
 
-        GameObject newVFX = Instantiate(ShootingVFX, shootingPoint.transform.position, Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle)));
-        Destroy(newVFX, 0.5f);
-
-        /* New Bullet Spread Start */
-        if (useRandomSpread)
+        else
         {
-            bullet.transform.rotation = Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle));
-            newVFX.transform.rotation = Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle));
+            float amount = ammoManager.amountToDeplate;
+            ammoManager.DeplateAmmo(amount);
+
+            RaycastHit hit;
+            Vector3 origin = shootingPoint.transform.position;
+            Vector3 direction = shootingPoint.transform.forward;
+
+            // In GatlingGun.Shoot
+            GameObject bullet = bulletPool.GetGameObject();
+            bullet.transform.position = shootingPoint.transform.position;
+            bullet.transform.rotation = shootingPoint.transform.rotation;
+
+            // Tell the bullet which pool it belongs to
+            bullet.GetComponent<ReusableBullet>().SetPool(bulletPool);
+
+
+            if (Physics.SphereCast(origin, radius, direction, out hit, maxDistance, hitLayers))
+            {
+                //Debug.Log("Hit: " + hit.collider.name);
+            }
+
+            GameObject newVFX = Instantiate(ShootingVFX, shootingPoint.transform.position, Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle)));
+            Destroy(newVFX, 0.5f);
+
+            /* New Bullet Spread Start */
+            if (useRandomSpread)
+            {
+                bullet.transform.rotation = Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle));
+                newVFX.transform.rotation = Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle));
+            }
+            /* New Bullet Spread End */
         }
-        /* New Bullet Spread End */
+
     }
 
     /* Bullet Spread */
