@@ -160,6 +160,11 @@ public class GunBase : MonoBehaviour
     }
     public void Shoot()
     {
+        if (!gameObject.activeSelf)
+        {
+            return;
+        }
+
         if (currentBullets <= 0)
         {
             if (reloadStarted == false)
@@ -198,7 +203,7 @@ public class GunBase : MonoBehaviour
                 newBullet.transform.rotation = ShootingPoint.transform.rotation;
 
                 newBullet.GetComponent<AutoBullet>().target = hp.GetCore();
-
+                newBullet.GetComponent<ReusableBullet>().direction = (transform.position - hp.GetCore().transform.position).normalized;
                 GameObject newVFX2 = Instantiate(ShootingVFX, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
                 Destroy(newVFX2, 0.5f);
                 return;
@@ -206,10 +211,12 @@ public class GunBase : MonoBehaviour
 
             ShootingPoint.transform.rotation = transform.rotation;
             GameObject regularBullet = bulletPool.GetGameObject();
+            regularBullet.GetComponent<ReusableBullet>().direction = transform.forward;
             regularBullet.transform.position = ShootingPoint.transform.position;
             regularBullet.transform.rotation = ShootingPoint.transform.rotation;
 
             GameObject newVFX = Instantiate(ShootingVFX, ShootingPoint.transform.position, ShootingPoint.transform.rotation);
+            
             Destroy(newVFX, 0.5f);
 
             if (reloadStarted == true)

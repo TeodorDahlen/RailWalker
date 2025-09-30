@@ -5415,9 +5415,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e603e21812bfba34f81b06db28ccf933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 0
-  maxSpeed: 20
-  accelerationTime: 2
+  Damage: 10
+  maxSpeed: 100
+  accelerationTime: 0.2
   direction: {x: 0, y: 0, z: 0}
   timeUntilDestruction: 1
   shootingSound: {fileID: 8300000, guid: 02fb39473a9c289458a458e7f38dc60f, type: 3}

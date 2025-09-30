@@ -50,7 +50,7 @@ public class BulletScript : MonoBehaviour
         audioSource.volume = baseAudioStrenght * Random.Range(0.9f, 1.1f);
         audioSource.Play();
     }
-
+        
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<ExplodingCacti>() != null)
