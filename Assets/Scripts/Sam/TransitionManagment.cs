@@ -78,9 +78,9 @@ public class TransitionManagment : MonoBehaviour
     [Button]
     public void ActivateShovel()
     {
-        //shovelTransis?.Invoke();
+        shovelTransis?.Invoke();
 
-       // DeactivatePewPew();
+        DeactivatePewPew();
 
         // cameraRig.transform.position = shovelCameraRigPosition.transform.position;
 
