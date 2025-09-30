@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1476176331054309917}
   - component: {fileID: 7220130342358119393}
   - component: {fileID: 1709504611361238402}
+  - component: {fileID: 2521119741551395420}
+  - component: {fileID: 749791214533406954}
   m_Layer: 0
   m_Name: Managment
   m_TagString: Untagged
@@ -50,8 +52,6 @@ MonoBehaviour:
   cameraRig: {fileID: 0}
   gunInHand: {fileID: 0}
   gunInHand2: {fileID: 0}
-  gunPewInteract: {fileID: 0}
-  shovelInteract: {fileID: 0}
   shovelPos: {x: 0, y: 0, z: 0}
   stopHere: 0
   orgpos: 0
@@ -70,3 +70,32 @@ MonoBehaviour:
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   activateWhenShovel: {fileID: 0}
   activateWhenShovel2: {fileID: 0}
+--- !u!114 &2521119741551395420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353654285269002413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b590ab25b77e2e94f8c54a9c90e06af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceScoreText: {fileID: 0}
+  containersChildrenOfSkyTrain: []
+  containerParentSky: {fileID: 0}
+--- !u!114 &749791214533406954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353654285269002413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318259cbc84925047bde9063b8ab2338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ContainerCamera: {fileID: 0}
+  popupContainerCanvas: {fileID: 0}

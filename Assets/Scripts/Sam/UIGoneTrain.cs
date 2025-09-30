@@ -6,6 +6,10 @@ public class UIGoneTrain : MonoBehaviour
     public Camera ContainerCamera; // your secondary camera
     public GameObject popupContainerCanvas; // your Canvas or Raw Image
 
+    private float delay = 2f;
+
+
+
     private void Start()
     {
         popupContainerCanvas.SetActive(false);
@@ -17,6 +21,7 @@ public class UIGoneTrain : MonoBehaviour
     {
         popupContainerCanvas.SetActive(true);
         ContainerCamera.enabled = true;
+       // Invoke("HideCanvas", 2f);
     }
 
     

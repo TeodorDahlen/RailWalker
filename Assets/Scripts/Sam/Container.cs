@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using NaughtyAttributes;
+using System;
 
 public class Container : MonoBehaviour
 {
@@ -15,11 +16,34 @@ public class Container : MonoBehaviour
     private Health health;
 
     public bool GotResources = false;
+    public bool amIdead = false;
+
+    private GameObject containerGameObject;
+    private Transform childVisualContainer;
+
+    public Action showTrainDeadUI;
+    [SerializeField]
+    private GameObject managmentgameObject;
+    [SerializeField]
+    private UIGoneTrain UIGoneTrainScript;
 
     private void Start()
     {
+       managmentgameObject = GameObject.Find("Managment");
+
+       UIGoneTrainScript = managmentgameObject.GetComponent<UIGoneTrain>();
+
         rend = this.GetComponentInChildren<Renderer>();
-        Resources_Container_Managment.Instance.addContainer(this);
+        containerGameObject = this.gameObject;
+
+        childVisualContainer = containerGameObject.transform.GetChild(0);
+
+        if (childVisualContainer == null)
+        {
+            Debug.LogWarning("childvisual is null");
+        }
+      
+        // Resources_Container_Managment.Instance.addContainer(this);
     }
 
     private void GetResources()
@@ -48,6 +72,11 @@ public class Container : MonoBehaviour
     [Button]
     public void FlashRed()
     {
+        if (UIGoneTrainScript != null)
+        {
+            UIGoneTrainScript.ShowCanvas();
+        }
+
        rend = this.GetComponentInChildren<Renderer>();
 
         Color originalColor = rend.material.color;
@@ -57,6 +86,21 @@ public class Container : MonoBehaviour
             
 
         DOTween.Kill(originalColor);
+        Invoke("HideThisContainer", 2f);
     }
+
+    private void HideThisContainer()
+    {
+        childVisualContainer.gameObject.SetActive(false);
+        amIdead = true;
+    }
+
+    private void ShowThisContainer()
+    {
+        amIdead = false;
+        childVisualContainer.gameObject.SetActive(true);
+    }
+
+    
             
 }

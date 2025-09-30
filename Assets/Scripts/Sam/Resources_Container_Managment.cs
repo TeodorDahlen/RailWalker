@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using System;
+using System.Linq;
 
 public class Resources_Container_Managment : MonoBehaviour
 {
@@ -15,7 +17,13 @@ public class Resources_Container_Managment : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resourceScoreText;
 
     //list with all containers
-    private List <Container> containers = new List<Container> ();
+    //private List <Container> containers = new List<Container> ();
+
+    [SerializeField]
+    private List<Container> containersChildrenOfSkyTrain = new List<Container>();
+
+    [SerializeField]
+    private GameObject containerParentSky;
 
     private void Start()
     {
@@ -29,9 +37,18 @@ public class Resources_Container_Managment : MonoBehaviour
             Destroy(gameObject);
         }
 
-        UpdateResourceScore();
+       containersChildrenOfSkyTrain = containerParentSky.GetComponentsInChildren<Container>().ToList();
+
+        //  UpdateResourceScore();
     }
 
+    public Container GetLastContainer()
+    {
+        Container lastContainer = containersChildrenOfSkyTrain[containersChildrenOfSkyTrain.Count - 1];
+        return lastContainer;
+    }
+
+    /*
     private void ShowScore()
     {
         foreach (var con in containers)
@@ -47,12 +64,14 @@ public class Resources_Container_Managment : MonoBehaviour
         Debug.Log("resource text should not be new text");
     }
 
+    */
+
     private void UpdateResourceScore()
     {
         resourceScoreText.text = currentResourceCountAllContainers.ToString("N0");
     }
 
-    
+    /*
     public void addContainer(Container con)
     {
         if (!containers.Contains(con))
@@ -70,13 +89,15 @@ public class Resources_Container_Managment : MonoBehaviour
         }
     }
 
+    */
+    /*
     public void RemoveContainer(Container con)
     {
         containers.Remove(con);
         CurrentContainerCount--;
     }
 
-    
+    */
     private void addResources(int resources)
     {
         Debug.Log($"added {resources} resources to container");

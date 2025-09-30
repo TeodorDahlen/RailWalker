@@ -19,7 +19,6 @@ public class Health : MonoBehaviour
     [Header("Scripts")]
     [SerializeField]
     private Container containerScript;
-    private UIGoneTrain UIGoneTrainScript;
 
     private void Start()
     {
@@ -33,14 +32,23 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if (GetComponent<OnHitEffect>() != null)
+        if (containerScript != null)
         {
-            GetComponent<OnHitEffect>().SpawnHit();
+            if (currentHealth <= 0 && containerScript.amIdead == false)
+            {
+                containerScript.FlashRed();
+            }
         }
-        if (currentHealth <= 0)
+        else
         {
-
-            PlayDeath();
+            if (GetComponent<OnHitEffect>() != null)
+            {
+                GetComponent<OnHitEffect>().SpawnHit();
+            }
+            if (currentHealth <= 0)
+            {
+                PlayDeath();
+            }
         }
     }
 
