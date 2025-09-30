@@ -594,6 +594,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23000012604968256, guid: beb87db6153f69442821a348e08035ab, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000012604968256, guid: beb87db6153f69442821a348e08035ab, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf73ab99485fa141b2f4f06df6d5bca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -602,7 +610,7 @@ PrefabInstance:
       addedObject: {fileID: 1889510805}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000011881196238, guid: beb87db6153f69442821a348e08035ab, type: 3}
-      insertIndex: -1
+      insertIndex: 4
       addedObject: {fileID: 44214440}
     - targetCorrespondingSourceObject: {fileID: 1000011881196238, guid: beb87db6153f69442821a348e08035ab, type: 3}
       insertIndex: -1
@@ -8783,7 +8791,7 @@ MonoBehaviour:
   fireRate: 0.05
   spinSpeed: 300
   recoil: {fileID: 0}
-  bulletPool: {fileID: 0}
+  bulletPool: {fileID: 961929898}
   ShootingVFX: {fileID: 4154188797642464329, guid: 055b5042b581acc429ef468f4b38a7f0, type: 3}
   shootingPoint: {fileID: 1469662453}
   radius: 0.5
@@ -13771,7 +13779,7 @@ PrefabInstance:
     - target: {fileID: 3143105821348654198, guid: 8633ee705bedfd1499e1bddb9918f3b0, type: 3}
       propertyPath: bulletPool
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 937779478}
     - target: {fileID: 3143105821348654198, guid: 8633ee705bedfd1499e1bddb9918f3b0, type: 3}
       propertyPath: playerCamera
       value: 
@@ -13783,7 +13791,7 @@ PrefabInstance:
     - target: {fileID: 3143105821348654198, guid: 8633ee705bedfd1499e1bddb9918f3b0, type: 3}
       propertyPath: autoBulletPool
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 903476851}
     - target: {fileID: 3143105821348654198, guid: 8633ee705bedfd1499e1bddb9918f3b0, type: 3}
       propertyPath: gradient.ctime1
       value: 52428
@@ -25025,7 +25033,7 @@ PrefabInstance:
     - target: {fileID: 3143105821348654198, guid: 8633ee705bedfd1499e1bddb9918f3b0, type: 3}
       propertyPath: bulletPool
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 465791647}
     - target: {fileID: 3143105821348654198, guid: 8633ee705bedfd1499e1bddb9918f3b0, type: 3}
       propertyPath: playerCamera
       value: 
@@ -25037,7 +25045,7 @@ PrefabInstance:
     - target: {fileID: 3143105821348654198, guid: 8633ee705bedfd1499e1bddb9918f3b0, type: 3}
       propertyPath: autoBulletPool
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1641243306}
     - target: {fileID: 3143105821348654198, guid: 8633ee705bedfd1499e1bddb9918f3b0, type: 3}
       propertyPath: gradient.ctime1
       value: 52428

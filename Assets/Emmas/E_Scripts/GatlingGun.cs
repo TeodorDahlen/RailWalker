@@ -12,19 +12,14 @@ public class GatlingGun : MonoBehaviour
     [SerializeField] private float spinSpeed = 360f;
     [SerializeField] private Animation recoil;
 
-    // [SerializeField]
-    // private GameObject Projectile;
+    [Header("Bullet Settings")]
+    [SerializeField] private ObjectPool bulletPool;
+    [SerializeField] private GameObject ShootingVFX;
+    [SerializeField] private GameObject shootingPoint;
+    [SerializeField] private AmmoManager ammoManager;
+    public bool canFire = true;
 
-    [SerializeField]
-    private ObjectPool bulletPool;
-
-    [SerializeField]
-    private GameObject ShootingVFX;
-
-    [SerializeField]
-    private GameObject shootingPoint;
-
-
+    [Header("Raycast Settings")]
     public float radius = 0.5f;
     public float maxDistance = 1000f;
     public LayerMask hitLayers;
@@ -85,8 +80,6 @@ public class GatlingGun : MonoBehaviour
         Vector3 origin = shootingPoint.transform.position;
         Vector3 direction = shootingPoint.transform.forward;
 
-        //Debug.DrawLine(origin, direction * maxDistance, Color.red, 2);
-
         // In GatlingGun.Shoot
         GameObject bullet = bulletPool.GetGameObject();
         bullet.transform.position = shootingPoint.transform.position;
@@ -100,10 +93,6 @@ public class GatlingGun : MonoBehaviour
         {
             //Debug.Log("Hit: " + hit.collider.name);
         }
-        // shootingPoint.transform.rotation = transform.rotation;
-        // GameObject bullet = bulletPool.GetGameObject();
-        // bullet.transform.position = shootingPoint.transform.position;
-        // bullet.transform.rotation = shootingPoint.transform.rotation;
 
         GameObject newVFX = Instantiate(ShootingVFX, shootingPoint.transform.position, Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle)));
         Destroy(newVFX, 0.5f);
