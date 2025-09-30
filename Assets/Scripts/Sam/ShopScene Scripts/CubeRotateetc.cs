@@ -31,8 +31,13 @@ public class CubeRotateetc : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        canBeShoot = false;
-      
+        if (other.gameObject.name == "Bullet(Clone)" && canBeShoot)
+        {
+            canBeShoot = false;
+            Debug.Log("pew sold");
+        }
+
+        Debug.LogWarning("TESTING");
     }
 
     [Button]

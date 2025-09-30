@@ -64,11 +64,15 @@ public class TransitionManagment : MonoBehaviour
     [Button]
     public void ActivateMech()
     {
-        mechTransis?.Invoke();
+       // mechTransis?.Invoke();
 
-        cameraRig.transform.position = mechCameraRigPosition.transform.position;
+        // cameraRig.transform.position = mechCameraRigPosition.transform.position;
 
-        ActivatePewPew();
+        cameraRig.transform.parent = mechCameraRigPosition.transform;
+        cameraRig.transform.localPosition = Vector3.zero;
+        cameraRig.transform.localRotation = Quaternion.identity;
+
+        //ActivatePewPew();
     }
 
     [Button]
@@ -78,7 +82,11 @@ public class TransitionManagment : MonoBehaviour
 
         DeactivatePewPew();
 
-        cameraRig.transform.position = shovelCameraRigPosition.transform.position;
+        // cameraRig.transform.position = shovelCameraRigPosition.transform.position;
+
+        cameraRig.transform.parent = shovelCameraRigPosition.transform;
+        cameraRig.transform.localPosition = Vector3.zero;
+        cameraRig.transform.localRotation = Quaternion.identity;
     }
 
     public void ActivatePewPew()
