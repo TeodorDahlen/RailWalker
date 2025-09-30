@@ -3,47 +3,23 @@ using NaughtyAttributes;
 using System.Collections.Generic;
 using System.Collections;
 
-//TODO: Add sound effects for wave start and wave cleared
-
-//TODO: Update enemy count in EnemyWaveManager/EnemyCounter.cs when an enemy is spawned
-//TODO: EnemyCounter script to call UpdateEnemyCount() on EnemyWaveManager when an enemy is destroyed
-
-//TODO: Use naughty attributes to kill all enemies in scene for testing waves
-//TODO: Add UI for wave number and enemies remaining (when we have UI)
-
-//NOTE: Assign player manually in inspector
 public class EnemyWaveManager : MonoBehaviour
 {
     [Header("Wave Settings")]
-
-    [SerializeField]
-    private int currentWave = 1;
-
-    [SerializeField]
-    private int waveMultiplier = 5;
-
-
-    // [SerializeField]
-    // private List<EnemyCounter> enemiesInScene;
+    [SerializeField] private int currentWave = 1;
+    [SerializeField] private int waveMultiplier = 5;
+    [SerializeField] private float timeBetweenWaves = 5f;
 
     [Header("References")]
+    [SerializeField] private GameObject player;
+    [SerializeField] private List<GameObject> enemySpawner;
+    [SerializeField] private List<EnemyWave> enemySpawnerScript;
 
-    [SerializeField]
-    private GameObject player;
-
-    [SerializeField]
-    private List<GameObject> enemySpawner;
-
-    [SerializeField]
-    private List<EnemyWave> enemySpawnerScript;
-    private float timeBetweenWaves = 5f;
     private int waveEnemyTotalCount;
     private int enemiesRemaining;
 
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player");
-
         if (player == null)
         {
             Debug.LogError("Can't find player in scene, make sure player is assigned in inspector.");
@@ -71,9 +47,8 @@ public class EnemyWaveManager : MonoBehaviour
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
         waveEnemyTotalCount = CalculateEnemyWaveCount();
-        enemiesRemaining = waveEnemyTotalCount;
+        enemiesRemaining = 0;
         StartCoroutine(StartWave());
-
     }
 
     private int CalculateEnemyWaveCount()
@@ -83,17 +58,28 @@ public class EnemyWaveManager : MonoBehaviour
 
     private IEnumerator StartWave()
     {
-        Debug.Log("Starting Wave " + currentWave);
+        Debug.Log(waveEnemyTotalCount + " enemies spawning in wave " + currentWave);
 
         yield return new WaitForSeconds(timeBetweenWaves);
 
-        enemySpawnerScript.ForEach(spawner => spawner.SpawnEnemy());
+        int enemiesToSpawn = waveEnemyTotalCount;
+
+        for (int i = 0; i < enemiesToSpawn; i++)
+        {
+            int spawnerIndex = Random.Range(0, enemySpawnerScript.Count);
+            enemySpawnerScript[spawnerIndex].SpawnEnemy(this);
+        }
+    }
+
+    public void EnemySpawned()
+    {
+        enemiesRemaining++;
     }
 
     public void UpdateEnemyCount()
     {
         enemiesRemaining--;
-        //Debug.Log(enemiesRemaining + " enemies remaining in wave " + currentWave);
+        Debug.Log("Enemy dead. Total enemies remaining: " + enemiesRemaining);
 
         if (enemiesRemaining <= 0)
         {
@@ -104,13 +90,12 @@ public class EnemyWaveManager : MonoBehaviour
     [Button("Force Next Wave")]
     private IEnumerator WaveCleared()
     {
-        Debug.Log("Wave " + currentWave + " cleared!");
+        Debug.Log("Wave " + currentWave + " cleared! Preparing for next wave...");
         currentWave++;
         waveEnemyTotalCount = CalculateEnemyWaveCount();
-        enemiesRemaining = waveEnemyTotalCount;
+        enemiesRemaining = 0;
 
         yield return new WaitForSeconds(timeBetweenWaves);
-        
         StartCoroutine(StartWave());
     }
 
@@ -118,6 +103,7 @@ public class EnemyWaveManager : MonoBehaviour
     {
         currentWave = 1;
         waveEnemyTotalCount = 0;
+        enemiesRemaining = 0;
 
         Debug.Log("Enemy Wave Manager reset to wave 1");
     }
