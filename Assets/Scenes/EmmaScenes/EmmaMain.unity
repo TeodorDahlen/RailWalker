@@ -6090,6 +6090,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 787969055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &501839325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 501839326}
+  - component: {fileID: 501839327}
+  m_Layer: 0
+  m_Name: AmmoManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &501839326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501839325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1618709376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &501839327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501839325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f916fbb73e89947a38ed6a072fa093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountToDeplate: 1
+  tempMeter: {fileID: 0}
 --- !u!1 &511108512
 GameObject:
   m_ObjectHideFlags: 0
@@ -7486,7 +7532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Heat: 100
-  reductionSpeed: 5
+  reductionSpeed: 0
   pointer: {fileID: 554866489}
 --- !u!114 &585605229
 MonoBehaviour:
@@ -8794,6 +8840,8 @@ MonoBehaviour:
   bulletPool: {fileID: 961929898}
   ShootingVFX: {fileID: 4154188797642464329, guid: 055b5042b581acc429ef468f4b38a7f0, type: 3}
   shootingPoint: {fileID: 1469662453}
+  ammoManager: {fileID: 501839327}
+  canFire: 1
   radius: 0.5
   maxDistance: 1000
   hitLayers:
@@ -19928,6 +19976,7 @@ Transform:
   m_Children:
   - {fileID: 767002726}
   - {fileID: 866395440}
+  - {fileID: 501839326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -0.344, y: 85.95, z: 90.307}
 --- !u!1 &1621173733
