@@ -34,7 +34,8 @@ public class Health : MonoBehaviour
 
         if (containerScript != null)
         {
-            if (currentHealth <= 0 && containerScript.amIdead == false)
+            //Debug.LogWarning("health script with container, take dmg");
+            if (currentHealth <= 0)
             {
                 containerScript.FlashRed();
             }

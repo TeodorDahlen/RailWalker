@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Ground
   - EnemySpawner
+  - Bullet
   layers:
   - Default
   - TransparentFX

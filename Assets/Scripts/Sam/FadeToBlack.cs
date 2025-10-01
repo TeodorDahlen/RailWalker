@@ -47,17 +47,20 @@ public class FadeToBlack : MonoBehaviour
     {
         Debug.Log("fadetodarkness method");
         screenFade.FadeOut();
+
         if (transis == transis.ToShovel)
         {
             transToShovel?.Invoke();
         }
         else
         {
-            darkness = true;
-            Invoke("GoBackLight", delayToLight);
+           
 
         }
-           
+
+        darkness = true;
+        Invoke("GoBackLight", delayToLight);
+
     }
 
     [Button]

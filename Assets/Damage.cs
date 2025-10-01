@@ -21,11 +21,16 @@ public class Damage : MonoBehaviour
             if (lastcontainer == null)
             {
                 Debug.LogWarning("GAME OVER");
+                Debug.LogWarning("GAME OVER");
+                Debug.LogWarning("GAME OVER");
+                Debug.LogWarning("GAME OVER");
+                Debug.LogWarning("GAME OVER");
                 return;
             }
             else
             {
                 lastcontainer.gameObject.GetComponent<Health>().TakeDamage(damageToContainer);
+                Debug.LogWarning($"{lastcontainer}");
             }
         }
     }

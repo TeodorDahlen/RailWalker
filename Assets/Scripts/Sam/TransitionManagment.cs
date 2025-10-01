@@ -70,7 +70,7 @@ public class TransitionManagment : MonoBehaviour
 
         cameraRig.transform.parent = mechCameraRigPosition.transform;
         cameraRig.transform.localPosition = Vector3.zero;
-        cameraRig.transform.localRotation = Quaternion.identity;
+       // cameraRig.transform.localRotation = Quaternion.identity;
 
         ActivatePewPew();
     }
@@ -78,7 +78,7 @@ public class TransitionManagment : MonoBehaviour
     [Button]
     public void ActivateShovel()
     {
-        Debug.Log("Shovel invoked, listeners: " + changeControlMapToShovel?.GetInvocationList().Length);
+        
         changeControlMapToShovel?.Invoke();
 
         DeactivatePewPew();

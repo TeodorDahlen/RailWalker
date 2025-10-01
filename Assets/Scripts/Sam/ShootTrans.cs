@@ -38,16 +38,21 @@ public class ShootTrans : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!canBeShoot)
+        if (other.CompareTag("Bullet"))
         {
-            Debug.Log("returning cant be shot flag");
-            return;
-        }
-        Debug.Log("flag got shot");
-        canBeShoot = false;
+            if (!canBeShoot)
+            {
+                Debug.LogWarning("returning cant be shot flag");
+                return;
+            }
+            Debug.Log("flag got shot");
+            canBeShoot = false;
 
-        transform.DOPunchRotation(new Vector3(0, 0, -10), 0.5f, 10, 1f).OnComplete(() => canBeShoot = true).OnComplete(()
-            => FadeToBlack.Instance.FadeToDarkness(transis.ToShovel));
+            transform.DOPunchRotation(new Vector3(0, 0, -10), 0.5f, 10, 1f).OnComplete(() => canBeShoot = true).OnComplete(()
+                => FadeToBlack.Instance.FadeToDarkness(transis.ToShovel));
+        }
+
+     
     }
 
     private void goToShovel()
