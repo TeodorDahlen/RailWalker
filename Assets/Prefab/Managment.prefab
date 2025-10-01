@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1709504611361238402}
   - component: {fileID: 2521119741551395420}
   - component: {fileID: 749791214533406954}
+  - component: {fileID: 4586279366978556184}
   m_Layer: 0
   m_Name: Managment
   m_TagString: Untagged
@@ -99,3 +100,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ContainerCamera: {fileID: 0}
   popupContainerCanvas: {fileID: 0}
+--- !u!114 &4586279366978556184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353654285269002413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac97587a8f7da84597cefe761e42aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenFade: {fileID: 0}
+  darkness: 0
