@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Furnace : MonoBehaviour
 {
-    [SerializeField]
-    private TempatureMeter tempMeter;
+    [SerializeField] private TempatureMeter tempMeter;
 
     public void AddCoal()
     {
@@ -14,5 +13,4 @@ public class Furnace : MonoBehaviour
     {
         return tempMeter.Heat;
     }
-
 }

@@ -1,31 +1,10 @@
 using UnityEngine;
-using NaughtyAttributes;
 
 public class TempatureMeter : MonoBehaviour
 {
-
-    [SerializeField]
-    public float Heat;
-
-    [SerializeField]
-    private float reductionSpeed;
-
-    [SerializeField]
-    private GameObject pointer;
-    private AmmoManager ammoManager;
-    
-
-    void Start()
-    {
-        ammoManager = FindFirstObjectByType<AmmoManager>();
-    }
-
-    // [Button]
-    // public void SetHeat()
-    // {
-    //     float debugAmount = 10f;
-    //     AddHeat(debugAmount);
-    // }
+    [SerializeField] public float Heat;          // Current heat (acts as ammo pool)
+    [SerializeField] private float reductionSpeed;
+    [SerializeField] private GameObject pointer; // UI needle
 
     public void AddHeat(float amount)
     {
@@ -35,29 +14,30 @@ public class TempatureMeter : MonoBehaviour
             return;
         }
 
-        amount = 10;
         Heat += amount;
-        ammoManager.AddAmmo(amount);
+        Heat = Mathf.Clamp(Heat, 0, 100);
+        Debug.Log($"Heat added: {amount}. Current Heat: {Heat}");
     }
 
-    public void RemoveHeat(float depletedAmmo)
+    public void RemoveHeat(float amount)
     {
-        depletedAmmo = ammoManager.amountToDeplate;
-        Heat -= depletedAmmo;
+        Heat -= amount;
+        Heat = Mathf.Clamp(Heat, 0, 100);
     }
 
     private void Update()
     {
+        // passive cooling over time
         Heat -= Time.deltaTime * reductionSpeed;
         Heat = Mathf.Clamp(Heat, 0, 100);
+
         UpdateVisuals();
     }
+
     private void UpdateVisuals()
     {
-        // Map 0�100 heat to 0�180 degrees (adjust as you like)
+        // Map 0–100 heat to 0–180 degrees rotation
         float angle = Heat * 1.8f;
-
-        // Set rotation directly instead of rotating each frame
-        pointer.transform.localRotation = Quaternion.Euler(0, 0, -angle); // Negative if clockwise
+        pointer.transform.localRotation = Quaternion.Euler(0, 0, -angle);
     }
 }

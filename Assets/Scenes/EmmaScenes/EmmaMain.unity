@@ -6134,8 +6134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f916fbb73e89947a38ed6a072fa093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountToDeplate: 1
-  tempMeter: {fileID: 0}
+  tempMeter: {fileID: 585605228}
+  amountToDeplete: 0.5
 --- !u!1 &511108512
 GameObject:
   m_ObjectHideFlags: 0
