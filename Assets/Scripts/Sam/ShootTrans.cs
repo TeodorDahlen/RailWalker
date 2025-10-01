@@ -18,9 +18,10 @@ public class ShootTrans : MonoBehaviour
     {
         if (!canBeShoot)
         {
+            Debug.Log("returning cant be shot flag");
             return;
         }
-
+        Debug.Log("flag got shot");
         canBeShoot = false;
 
         transform.DOPunchRotation(new Vector3(0, 0, -10), 0.5f, 10, 1f).OnComplete(() => canBeShoot = true).OnComplete(()

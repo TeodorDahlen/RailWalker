@@ -40,7 +40,7 @@ public class FadeToBlack : MonoBehaviour
         }
     }
 
-    [Button]
+    
     public void FadeToDarkness(transis transis)
     {
         Debug.Log("fadetodarkness method");

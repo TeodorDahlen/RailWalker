@@ -20,7 +20,8 @@ public class ChoChotransis : MonoBehaviour
         yield return new WaitForSeconds(3f);
         orgposY = transform.localPosition.y;
         stopHere = orgposY - 0.1f;
-     }
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -58,14 +59,15 @@ public class ChoChotransis : MonoBehaviour
         }
     }
 
-
-    //float draNerMigIHelvetet = 100f;
-    //private void Update()
-    //{
-    //    if (transform.localPosition.y < draNerMigIHelvetet)
-    //    {
-    //        draNerMigIHelvetet = transform.localPosition.y;
-    //        Debug.Log("draNerMigIHelvetet: " + draNerMigIHelvetet);
-    //    }
-    //}
+    /*
+    float dranermigihelvetet = 100f;
+    private void Update()
+    {
+        if (transform.localPosition.y < dranermigihelvetet)
+        {
+            dranermigihelvetet = transform.localPosition.y;
+            Debug.Log("dranermigihelvetet: " + dranermigihelvetet);
+        }
+    }
+    */
 }
