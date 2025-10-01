@@ -21,7 +21,7 @@ public class UIGoneTrain : MonoBehaviour
     {
         popupContainerCanvas.SetActive(true);
         ContainerCamera.enabled = true;
-       // Invoke("HideCanvas", 2f);
+        Invoke("HideCanvas", 2f);
     }
 
     

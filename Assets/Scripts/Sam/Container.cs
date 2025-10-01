@@ -40,7 +40,7 @@ public class Container : MonoBehaviour
 
         if (childVisualContainer == null)
         {
-            Debug.LogWarning("childvisual is null");
+            Debug.LogWarning("childvisual for container is null");
         }
       
         // Resources_Container_Managment.Instance.addContainer(this);

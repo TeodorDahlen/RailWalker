@@ -44,8 +44,16 @@ public class Resources_Container_Managment : MonoBehaviour
 
     public Container GetLastContainer()
     {
-        Container lastContainer = containersChildrenOfSkyTrain[containersChildrenOfSkyTrain.Count - 1];
-        return lastContainer;
+       // Container lastContainer = containersChildrenOfSkyTrain[containersChildrenOfSkyTrain.Count - 1];
+        for (int i = containersChildrenOfSkyTrain.Count - 1; i >= 0 ; i--)
+        {
+            if (!containersChildrenOfSkyTrain[i].amIdead)
+            {
+                Debug.Log($"alive container at index: {i}");
+                return containersChildrenOfSkyTrain [i];
+            }
+        }
+        return null;
     }
 
     /*
