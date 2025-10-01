@@ -1157,7 +1157,7 @@
                 {
                     "name": "",
                     "id": "9579efa0-61ad-4fea-91ed-f4d5782d9746",
-                    "path": "*/{SecondaryTrigger}",
+                    "path": "<XRController>{LeftHand}/{SecondaryTrigger}",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",

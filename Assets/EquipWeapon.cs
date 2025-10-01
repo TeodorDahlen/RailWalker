@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EquipWeapon : MonoBehaviour
@@ -26,9 +27,14 @@ public class EquipWeapon : MonoBehaviour
             gun1.SetActive(false);
             equipped1 = false;
             gun1.GetComponent<GunBase>().reloadStarted = false;
+            if (equipped2 == false)
+            {
+                EquipGun3();
+            }
         }
         else
         {
+            unEqiupGun3();
             equipped1 = true;
             gun1.SetActive(true);
         }
@@ -40,24 +46,25 @@ public class EquipWeapon : MonoBehaviour
             gun2.SetActive(false);
             equipped2 = false;
             gun2.GetComponent<GunBase>().reloadStarted = false;
+            if(equipped1 == false)
+            {
+                EquipGun3();
+            }
         }
         else
         {
+            unEqiupGun3();
             equipped2 = true;
             gun2.SetActive(true);
         }
     }
-    //public void EquipGun3()
-    //{
-    //    if (equipped1)
-    //    {
-    //        gameObject.SetActive(false);
-    //        equipped1 = false;
-    //    }
-    //    else
-    //    {
-    //        equipped1 = true;
-    //        gameObject.SetActive(true);
-    //    }
-    //}
+    public void EquipGun3()
+    {
+        gatlingGun.SetActive(true);
+    }
+
+    public void unEqiupGun3()
+    {
+        gatlingGun.SetActive(false);
+    }
 }
