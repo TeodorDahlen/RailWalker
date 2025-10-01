@@ -97,8 +97,8 @@ public class GatlingGun : MonoBehaviour
         // Consume furnace heat as ammo
         ammoManager.DepleteAmmo(ammoManager.amountToDeplete);
 
-        hapticSource?.Play();
-        Debug.Log("Pew Pew vibrate");
+        // hapticSource?.Play();
+        // Debug.Log("Pew Pew vibrate");
 
         // Fire bullet from pool
         GameObject bullet = bulletPool.GetGameObject();
