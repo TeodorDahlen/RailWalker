@@ -19,7 +19,16 @@ public class Damage : MonoBehaviour
             //make so the last container in list take damage
            var lastcontainer = Resources_Container_Managment.Instance.GetLastContainer();
 
-            lastcontainer.gameObject.GetComponent<Health>().TakeDamage(damageToContainer);
+            if (lastcontainer == null)
+            {
+                Debug.LogWarning("GAME OVER");
+                return;
+            }
+            else
+            {
+                lastcontainer.gameObject.GetComponent<Health>().TakeDamage(damageToContainer);
+
+            }
         }
     }
 }

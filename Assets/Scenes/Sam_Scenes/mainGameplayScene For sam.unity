@@ -711,11 +711,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2860771320240488949, guid: 1a4ffe47a4c3ac942b00302b4b8651b8, type: 3}
   m_PrefabInstance: {fileID: 44916351}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &57070345 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5353654285269002413, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
-  m_PrefabInstance: {fileID: 1760387948}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &57810440
 GameObject:
   m_ObjectHideFlags: 0
@@ -24245,6 +24240,10 @@ PrefabInstance:
       propertyPath: containerParentSky
       value: 
       objectReference: {fileID: 1620600921}
+    - target: {fileID: 4586279366978556184, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: screenFade
+      value: 
+      objectReference: {fileID: 523700306}
     - target: {fileID: 5353654285269002413, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
       propertyPath: m_Name
       value: Managment
@@ -24272,30 +24271,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5353654285269002413, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1760387954}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
 --- !u!4 &1760387949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1476176331054309917, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
   m_PrefabInstance: {fileID: 1760387948}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1760387954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57070345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ac97587a8f7da84597cefe761e42aae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenFade: {fileID: 523700306}
-  darkness: 0
 --- !u!1 &1771338790
 GameObject:
   m_ObjectHideFlags: 0
