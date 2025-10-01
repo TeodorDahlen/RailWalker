@@ -8963,6 +8963,7 @@ GameObject:
   - component: {fileID: 767002724}
   - component: {fileID: 767002722}
   - component: {fileID: 767002723}
+  - component: {fileID: 767002727}
   m_Layer: 0
   m_Name: GatlingGun
   m_TagString: Player
@@ -8986,6 +8987,7 @@ MonoBehaviour:
   fireRate: 0.05
   spinSpeed: 300
   recoil: {fileID: 0}
+  hapticSource: {fileID: 0}
   bulletPool: {fileID: 961929898}
   ShootingVFX: {fileID: 4154188797642464329, guid: 055b5042b581acc429ef468f4b38a7f0, type: 3}
   shootingPoint: {fileID: 1469662453}
@@ -9090,6 +9092,24 @@ Transform:
   - {fileID: 815058895}
   m_Father: {fileID: 1618709376}
   m_LocalEulerAnglesHint: {x: -94.402, y: -176.347, z: 85.991}
+--- !u!114 &767002727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767002721}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc93c7e1ae142448d4a122be86ea8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 2460798210113038985, guid: 0c73d0e648e7ad3448c538a7527cc811, type: 3}
+  _controller: 2
+  _loop: 0
+  _amplitude: 1
+  _frequencyShift: 0
+  _priority: 128
 --- !u!1 &768665723
 GameObject:
   m_ObjectHideFlags: 0

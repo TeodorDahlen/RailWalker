@@ -1,6 +1,8 @@
 using UnityEngine;
 using NaughtyAttributes;
 using static UnityEngine.InputSystem.InputAction;
+using UnityEngine.XR.OpenXR.Input;
+using Oculus.Haptics;
 
 public class GatlingGun : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class GatlingGun : MonoBehaviour
     [SerializeField] private float fireRate = 0.1f;
     [SerializeField] private float spinSpeed = 360f;
     [SerializeField] private Animation recoil;
+    [SerializeField] private HapticSource hapticSource;
 
     [Header("Bullet Settings")]
     [SerializeField] private ObjectPool bulletPool;
@@ -93,6 +96,9 @@ public class GatlingGun : MonoBehaviour
 
         // Consume furnace heat as ammo
         ammoManager.DepleteAmmo(ammoManager.amountToDeplete);
+
+        // hapticSource?.Play();
+        // Debug.Log("Pew Pew vibrate");
 
         // Fire bullet from pool
         GameObject bullet = bulletPool.GetGameObject();
