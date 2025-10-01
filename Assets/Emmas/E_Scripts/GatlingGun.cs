@@ -13,7 +13,8 @@ public class GatlingGun : MonoBehaviour
     [SerializeField] private float fireRate = 0.1f;
     [SerializeField] private float spinSpeed = 360f;
     [SerializeField] private Animation recoil;
-    [SerializeField] private HapticSource hapticSource;
+
+// [SerializeField] private HapticSource hapticSource;
 
     [Header("Bullet Settings")]
     [SerializeField] private ObjectPool bulletPool;

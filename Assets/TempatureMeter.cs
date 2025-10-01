@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class TempatureMeter : MonoBehaviour
 {
-    [SerializeField] public float Heat;          // Current heat (acts as ammo pool)
+    [SerializeField] public float Heat;
     [SerializeField] private float reductionSpeed;
-    [SerializeField] private GameObject pointer; // UI needle
+    [SerializeField] private GameObject pointer;
 
     public void AddHeat(float amount)
     {
@@ -27,7 +27,6 @@ public class TempatureMeter : MonoBehaviour
 
     private void Update()
     {
-        // passive cooling over time
         Heat -= Time.deltaTime * reductionSpeed;
         Heat = Mathf.Clamp(Heat, 0, 100);
 
