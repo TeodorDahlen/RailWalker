@@ -34,8 +34,8 @@ public class TransitionManagment : MonoBehaviour
 
     //ACTION EVENTS
     //subscrib is in controllermappingmanager
-    public event Action mechTransis;
-    public event Action shovelTransis;
+    public event Action changeControlMapToMech;
+    public event Action changeControlMapToShovel;
 
     public float orgpos;
 
@@ -64,7 +64,7 @@ public class TransitionManagment : MonoBehaviour
     [Button]
     public void ActivateMech()
     {
-       // mechTransis?.Invoke();
+        changeControlMapToMech?.Invoke();
 
         // cameraRig.transform.position = mechCameraRigPosition.transform.position;
 
@@ -72,13 +72,14 @@ public class TransitionManagment : MonoBehaviour
         cameraRig.transform.localPosition = Vector3.zero;
         cameraRig.transform.localRotation = Quaternion.identity;
 
-        //ActivatePewPew();
+        ActivatePewPew();
     }
 
     [Button]
     public void ActivateShovel()
     {
-        shovelTransis?.Invoke();
+        Debug.Log("Shovel invoked, listeners: " + changeControlMapToShovel?.GetInvocationList().Length);
+        changeControlMapToShovel?.Invoke();
 
         DeactivatePewPew();
 

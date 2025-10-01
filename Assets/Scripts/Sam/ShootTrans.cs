@@ -10,9 +10,31 @@ public class ShootTrans : MonoBehaviour
 
     private void Start()
     {
-        FadeToBlack.Instance.transToShovel -= goToShovel;
-        FadeToBlack.Instance.transToShovel += goToShovel;
+        Invoke("UnsubscribeToEvents", 1f);
     }
+
+
+    private void subscribeToEvents()
+    {
+
+        FadeToBlack.Instance.transToShovel += goToShovel;
+
+    }
+
+    private void UnsubscribeToEvents()
+    {
+        if (FadeToBlack.Instance != null)
+        {
+            FadeToBlack.Instance.transToShovel -= goToShovel;
+            subscribeToEvents();
+        }
+        else
+        {
+            Debug.LogWarning("fadetoblack is null");
+        }
+       
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

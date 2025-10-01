@@ -38,6 +38,8 @@ public class FadeToBlack : MonoBehaviour
         {
             Debug.LogWarning("screenfade is null");
         }
+
+        Debug.LogWarning("me awake fade to black");
     }
 
     
@@ -49,8 +51,13 @@ public class FadeToBlack : MonoBehaviour
         {
             transToShovel?.Invoke();
         }
-        darkness = true;
-        Invoke("GoBackLight", delayToLight);
+        else
+        {
+            darkness = true;
+            Invoke("GoBackLight", delayToLight);
+
+        }
+           
     }
 
     [Button]

@@ -21,15 +21,27 @@ public class ControllerMappingManager : MonoBehaviour
         shootMap = inputActions.FindActionMap("Game");
         shovelInteractMap = inputActions.FindActionMap("Interact");
 
-        //subscribing event
-        TransitionManagment.Instance.shovelTransis -= ShovelTime;
-        TransitionManagment.Instance.mechTransis -= MechTime;
-
-        TransitionManagment.Instance.shovelTransis += ShovelTime;
-        TransitionManagment.Instance.mechTransis += MechTime;
-
         shootMap.Enable();
         shovelInteractMap.Disable();
+
+        Invoke("UnsubscribeToEvents", 1f);
+    }
+
+    private void subscribeToEvents()
+    {
+        //subscribing event
+        Debug.Log("Subscribing... Instance is: " + TransitionManagment.Instance);
+
+        TransitionManagment.Instance.changeControlMapToMech += MechTime;
+        TransitionManagment.Instance.changeControlMapToShovel += ShovelTime;
+    }
+
+    private void UnsubscribeToEvents()
+    {
+          TransitionManagment.Instance.changeControlMapToShovel -= ShovelTime;
+          TransitionManagment.Instance.changeControlMapToMech -= MechTime;
+
+          subscribeToEvents();
     }
 
     [Button]
