@@ -105,20 +105,21 @@ public class GatlingGun : MonoBehaviour
         GameObject bullet = bulletPool.GetGameObject();
         bullet.transform.position = shootingPoint.transform.position;
         bullet.transform.rotation = shootingPoint.transform.rotation;
+        bullet.GetComponent<ReusableBullet>().direction = bullet.transform.forward;
         bullet.GetComponent<ReusableBullet>().SetPool(bulletPool);
 
         // Visual recoil
         if (recoil != null) recoil.Play();
 
         // Spawn muzzle flash VFX
-        GameObject newVFX = Instantiate(ShootingVFX, shootingPoint.transform.position,
-            Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle)));
-        Destroy(newVFX, 0.5f);
+        //GameObject newVFX = Instantiate(ShootingVFX, shootingPoint.transform.position,
+        //    Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle)));
+        //Destroy(newVFX, 0.5f);
 
         if (useRandomSpread)
         {
             bullet.transform.rotation = Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle));
-            newVFX.transform.rotation = Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle));
+            //newVFX.transform.rotation = Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle));
         }
     }
 

@@ -63,7 +63,6 @@ public class ReusableBullet : MonoBehaviour
     {
         elapsedTime = 0f;
         currentSpeed = 0f;
-        //direction = transform.forward;
 
         direction = transform.forward;
         linerenderer.SetActive(false);
