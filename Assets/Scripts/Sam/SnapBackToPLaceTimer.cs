@@ -30,7 +30,6 @@ public class SnapBackToPLaceTimer : MonoBehaviour
             Shovel = false;
             gatlingOrgPos = gatlingGrab.transform.position;
             gatlingOrgRot = gatlingGrab.transform.rotation;
-           
         }
     }
 
@@ -51,7 +50,6 @@ public class SnapBackToPLaceTimer : MonoBehaviour
             gatlingGrab.transform.rotation = gatlingOrgRot;
             Debug.Log("gatling gun snap back to original position");
         }
-        
     }
 
     public void CancelSnapBack()

@@ -24818,6 +24818,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managment
       objectReference: {fileID: 0}
+    - target: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: gatlingGrab
+      value: 
+      objectReference: {fileID: 1164557382}
+    - target: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: ShovelScript
+      value: 
+      objectReference: {fileID: 1136050397}
+    - target: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: GatlingGunScript
+      value: 
+      objectReference: {fileID: 1128820363}
     - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
       propertyPath: cameraRig
       value: 
@@ -24841,10 +24853,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5353654285269002413, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1760387956}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
 --- !u!4 &1760387949 stripped
 Transform:
@@ -24873,11 +24882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318259cbc84925047bde9063b8ab2338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1760387956
+--- !u!114 &1760387956 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+  m_PrefabInstance: {fileID: 1760387948}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714986781}
   m_Enabled: 1
@@ -24885,11 +24893,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff20ec83db88a1e44bb166e8c3656253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShovelScript: {fileID: 1136050397}
-  GatlingGunScript: {fileID: 1128820363}
-  gatlingGrab: {fileID: 1164557382}
-  gatlingOrgPos: {x: 0, y: 0, z: 0}
-  gatlingOrgRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1760823258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3df6c7cf00a445c4383d396d5edfc79d, type: 3}
