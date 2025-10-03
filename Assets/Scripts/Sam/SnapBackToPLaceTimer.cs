@@ -17,9 +17,7 @@ public class SnapBackToPLaceTimer : MonoBehaviour
 
     private bool Shovel = false;
 
-    [SerializeField]
     private Vector3 gatlingOrgPos;
-    [SerializeField]
     private Quaternion gatlingOrgRot;
     private void Start()
     {
