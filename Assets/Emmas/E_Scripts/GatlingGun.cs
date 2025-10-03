@@ -30,6 +30,8 @@ public class GatlingGun : MonoBehaviour
 
     private Vector3 originalLocalPos;
 
+
+
     private bool CanShoot()
     {
         return ammoManager.HasAmmo() && canFire;
