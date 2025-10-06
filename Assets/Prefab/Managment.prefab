@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2521119741551395420}
   - component: {fileID: 749791214533406954}
   - component: {fileID: 4586279366978556184}
+  - component: {fileID: 5401974378767794927}
   m_Layer: 0
   m_Name: Managment
   m_TagString: Untagged
@@ -114,3 +115,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenFade: {fileID: 0}
   darkness: 0
+--- !u!114 &5401974378767794927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353654285269002413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff20ec83db88a1e44bb166e8c3656253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShovelScript: {fileID: 0}
+  GatlingGunScript: {fileID: 0}
+  gatlingGrab: {fileID: 0}
+  gatlingOrgPos: {x: 0, y: 0, z: 0}
+  gatlingOrgRot: {x: 0, y: 0, z: 0, w: 0}

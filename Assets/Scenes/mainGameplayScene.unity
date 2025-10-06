@@ -15114,6 +15114,11 @@ PrefabInstance:
       addedObject: {fileID: 832102727}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
+--- !u!1 &1128820362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8040863889240439668, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
+  m_PrefabInstance: {fileID: 1128820361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1128820363 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
@@ -15325,6 +15330,17 @@ MonoBehaviour:
   _rigidbody: {fileID: 1136050395}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+--- !u!114 &1136050397 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7663572741051635834, guid: beb87db6153f69442821a348e08035ab, type: 3}
+  m_PrefabInstance: {fileID: 1136050392}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136050394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed284baae7108a45b994a43903c7544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1137721640
 GameObject:
   m_ObjectHideFlags: 0
@@ -24958,6 +24974,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managment
       objectReference: {fileID: 0}
+    - target: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: gatlingGrab
+      value: 
+      objectReference: {fileID: 1128820362}
+    - target: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: ShovelScript
+      value: 
+      objectReference: {fileID: 1136050397}
+    - target: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
+      propertyPath: GatlingGunScript
+      value: 
+      objectReference: {fileID: 1369558702}
     - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
       propertyPath: cameraRig
       value: 
@@ -30234,6 +30262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed284baae7108a45b994a43903c7544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LocalorgPos: {x: 0, y: 0, z: 0}
+  LocalOrgRotation: {x: 0, y: 0, z: 0, w: 0}
   HasCoal: 1
   CoalOnShovel: {fileID: 0}
 --- !u!4 &2082646955 stripped
