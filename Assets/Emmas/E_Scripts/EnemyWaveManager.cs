@@ -14,6 +14,7 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private List<GameObject> enemySpawner;
     [SerializeField] private List<EnemyWave> enemySpawnerScript;
+    [SerializeField] private WaveUIManager waveUIManager;
 
     private int waveEnemyTotalCount;
     private int enemiesRemaining;
@@ -48,6 +49,7 @@ public class EnemyWaveManager : MonoBehaviour
 
         waveEnemyTotalCount = CalculateEnemyWaveCount();
         enemiesRemaining = 0;
+
         StartCoroutine(StartWave());
     }
 
@@ -58,9 +60,19 @@ public class EnemyWaveManager : MonoBehaviour
 
     private IEnumerator StartWave()
     {
-        Debug.Log(waveEnemyTotalCount + " enemies spawning in wave " + currentWave);
+        // Debug.Log(waveEnemyTotalCount + " enemies spawning in wave " + currentWave);
+        if (waveUIManager != null)
+        {
+            waveUIManager.ShowWaveStartText(currentWave);
+        }
 
-        yield return new WaitForSeconds(timeBetweenWaves);
+        else
+        {
+            Debug.LogWarning("WaveUIManager reference is not assigned in the inspector.");
+        }
+
+        // yield return new WaitForSeconds(timeBetweenWaves);
+            yield return new WaitForSeconds(2f);
 
         int enemiesToSpawn = waveEnemyTotalCount;
 
@@ -90,10 +102,20 @@ public class EnemyWaveManager : MonoBehaviour
     [Button("Force Next Wave")]
     private IEnumerator WaveCleared()
     {
-        Debug.Log("Wave " + currentWave + " cleared! Preparing for next wave...");
+        if (waveUIManager != null)
+        {
+            waveUIManager.StartCountdown(timeBetweenWaves);
+        }
+        else
+        {
+            Debug.LogWarning("WaveUIManager reference is not assigned in the inspector.");
+        }
+
+        // Debug.Log("Wave " + currentWave + " cleared! Preparing for next wave...");
         currentWave++;
         waveEnemyTotalCount = CalculateEnemyWaveCount();
         enemiesRemaining = 0;
+
 
         yield return new WaitForSeconds(timeBetweenWaves);
         StartCoroutine(StartWave());
@@ -106,5 +128,10 @@ public class EnemyWaveManager : MonoBehaviour
         enemiesRemaining = 0;
 
         Debug.Log("Enemy Wave Manager reset to wave 1");
+    }
+
+    public int GetCurrentWave(int currentwave)
+    {
+        return currentWave;        
     }
 }
