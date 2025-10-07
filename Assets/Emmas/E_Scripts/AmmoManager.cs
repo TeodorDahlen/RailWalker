@@ -3,6 +3,7 @@ using UnityEngine;
 public class AmmoManager : MonoBehaviour
 {
     [SerializeField] private TempatureMeter tempMeter;
+    [SerializeField] private GameObject tempMeterObject;
     public float amountToDeplete = 0.5f; // heat lost per shot
 
     public bool HasAmmo()

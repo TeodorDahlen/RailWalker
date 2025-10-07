@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TempatureMeter : MonoBehaviour
 {
     [SerializeField] public float Heat;
     [SerializeField] private float reductionSpeed;
-    [SerializeField] private GameObject pointer;
+    [SerializeField] private List<GameObject>  pointer;
 
     public void AddHeat(float amount)
     {
@@ -37,6 +38,10 @@ public class TempatureMeter : MonoBehaviour
     {
         // Map 0–100 heat to 0–180 degrees rotation
         float angle = Heat * 1.8f;
-        pointer.transform.localRotation = Quaternion.Euler(0, 0, -angle);
+        //pointer.transform.localRotation = Quaternion.Euler(0, 0, -angle);
+        for (int i = 0; i < pointer.Count; i++)
+        {
+            pointer[i].transform.localRotation = Quaternion.Euler(0, 0, -angle);
+        }
     }
 }
