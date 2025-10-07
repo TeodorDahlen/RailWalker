@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
@@ -20,6 +21,9 @@ public class Health : MonoBehaviour
     [SerializeField]
     private Container containerScript;
 
+
+    public event Action<float> OnDamaged;
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -31,7 +35,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-
+        OnDamaged?.Invoke(damage);
         if (containerScript != null)
         {
             //Debug.LogWarning("health script with container, take dmg");
@@ -78,4 +82,10 @@ public class Health : MonoBehaviour
         }
     }
 
+
+    public void SetHealth(float HP)
+    {
+        maxHealth = HP;
+        currentHealth = maxHealth;
+    }
 }
