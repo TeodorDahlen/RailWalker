@@ -1,8 +1,6 @@
 using UnityEngine;
 using NaughtyAttributes;
 using static UnityEngine.InputSystem.InputAction;
-using UnityEngine.XR.OpenXR.Input;
-using Oculus.Haptics;
 
 public class GatlingGun : MonoBehaviour
 {
@@ -13,8 +11,7 @@ public class GatlingGun : MonoBehaviour
     [SerializeField] private float fireRate = 0.1f;
     [SerializeField] private float spinSpeed = 360f;
     [SerializeField] private Animation recoil;
-
-// [SerializeField] private HapticSource hapticSource;
+    [SerializeField] private GameObject tempMeterObject;
 
     [Header("Bullet Settings")]
     [SerializeField] private ObjectPool bulletPool;
@@ -30,7 +27,10 @@ public class GatlingGun : MonoBehaviour
         
     private Vector3 originalLocalPos;
 
-
+    void Start()
+    {
+        tempMeterObject.SetActive(false);
+    }
 
     private bool CanShoot()
     {
@@ -73,6 +73,10 @@ public class GatlingGun : MonoBehaviour
     {
         if (shootingPoint == null) return;
 
+        //Show Temp Meter
+        if (tempMeterObject != null)
+        tempMeterObject.SetActive(true);
+
         Shoot();
         if (recoil != null)
             recoil.Play();
@@ -81,11 +85,9 @@ public class GatlingGun : MonoBehaviour
     [Button]
     public void StopFiring()
     {
+        tempMeterObject.SetActive(false);
         CancelInvoke(nameof(FireFromRotatingPoint));
         CancelInvoke(nameof(RotateBarrel));
-
-        //if (shootingPoint != null)
-        //    shootingPoint.transform.localPosition = originalLocalPos;
     }
 
     public void Shoot()
@@ -100,9 +102,6 @@ public class GatlingGun : MonoBehaviour
         // Consume furnace heat as ammo
         ammoManager.DepleteAmmo(ammoManager.amountToDeplete);
 
-        // hapticSource?.Play();
-        // Debug.Log("Pew Pew vibrate");
-
         // Fire bullet from pool
         GameObject bullet = bulletPool.GetGameObject();
         bullet.transform.position = shootingPoint.transform.position;
@@ -113,15 +112,9 @@ public class GatlingGun : MonoBehaviour
         // Visual recoil
         if (recoil != null) recoil.Play();
 
-        // Spawn muzzle flash VFX
-        //GameObject newVFX = Instantiate(ShootingVFX, shootingPoint.transform.position,
-        //    Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle)));
-        //Destroy(newVFX, 0.5f);
-
         if (useRandomSpread)
         {
             bullet.transform.rotation = Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle));
-            //newVFX.transform.rotation = Quaternion.LookRotation(GetBulletDirection(shootingPoint.transform, spreadAngle));
         }
     }
 
