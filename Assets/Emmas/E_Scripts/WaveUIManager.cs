@@ -69,7 +69,7 @@ public class WaveUIManager : MonoBehaviour
     private IEnumerator UpdateCountdown(float timeUntilNextWave)
     {
         TimeUntilNextWaveText.gameObject.SetActive(true);
-        timeUntilNextWave = EnemyWaveManager.TimeBetweenWaves();
+        timeUntilNextWave = EnemyWaveManager.GetTimeBetweenWaves(timeUntilNextWave);
         float countdown = timeUntilNextWave;
 
         while (countdown > 0)

@@ -31235,7 +31235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWave: 1
   waveMultiplier: 2
-  timeBetweenWaves: 10
+  basetimeBetweenWaves: 10
+  timeBetweenWaves: 0
+  timeMultiplyer: 2
   player: {fileID: 132509577}
   enemySpawner: []
   enemySpawnerScript: []

@@ -8,7 +8,8 @@ public class EnemyWaveManager : MonoBehaviour
     [Header("Wave Settings")]
     [SerializeField] private int currentWave = 1;
     [SerializeField] private int waveMultiplier = 5;
-    [SerializeField] private float timeBetweenWaves = 5f;
+    [SerializeField] private float baseTimeBetweenWaves = 5f;
+    [SerializeField] private float timeMultiplyer = 1.2f;
 
     [Header("References")]
     [SerializeField] private GameObject player;
@@ -16,6 +17,7 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField] private List<EnemyWave> enemySpawnerScript;
     [SerializeField] private WaveUIManager waveUIManager;
 
+    private float timeBetweenWaves;
     private int waveEnemyTotalCount;
     private int enemiesRemaining;
 
@@ -53,19 +55,22 @@ public class EnemyWaveManager : MonoBehaviour
         StartCoroutine(StartWave());
     }
 
+    public int GetCurrentWave(int currentwave)
+    {
+        return currentWave;        
+    }
+    
+    public float GetTimeBetweenWaves(float timeBetweenWaves)
+    {
+        return timeBetweenWaves;
+    }
     private int CalculateEnemyWaveCount()
     {
         return currentWave * waveMultiplier;
     }
-    
-    public float TimeBetweenWaves()
-    {
-        return timeBetweenWaves;
-    }
 
     private IEnumerator StartWave()
     {
-        // Debug.Log(waveEnemyTotalCount + " enemies spawning in wave " + currentWave);
         if (waveUIManager != null)
         {
             waveUIManager.ShowWaveStartText(currentWave);
@@ -76,7 +81,6 @@ public class EnemyWaveManager : MonoBehaviour
             Debug.LogWarning("WaveUIManager reference is not assigned in the inspector.");
         }
 
-        // yield return new WaitForSeconds(timeBetweenWaves);
         yield return new WaitForSeconds(2f);
 
         int enemiesToSpawn = waveEnemyTotalCount;
@@ -96,7 +100,6 @@ public class EnemyWaveManager : MonoBehaviour
     public void UpdateEnemyCount()
     {
         enemiesRemaining--;
-        Debug.Log("Enemy dead. Total enemies remaining: " + enemiesRemaining);
 
         if (enemiesRemaining <= 0)
         {
@@ -107,6 +110,19 @@ public class EnemyWaveManager : MonoBehaviour
     [Button("Force Next Wave")]
     private IEnumerator WaveCleared()
     {
+
+        currentWave++;
+
+        if (currentWave % 5 == 0)
+        {
+            timeBetweenWaves = baseTimeBetweenWaves * timeMultiplyer;
+        }
+
+        else
+        {
+            timeBetweenWaves = baseTimeBetweenWaves;
+        }
+
         if (waveUIManager != null)
         {
             waveUIManager.StartCountdown(timeBetweenWaves);
@@ -116,8 +132,6 @@ public class EnemyWaveManager : MonoBehaviour
             Debug.LogWarning("WaveUIManager reference is not assigned in the inspector.");
         }
 
-        // Debug.Log("Wave " + currentWave + " cleared! Preparing for next wave...");
-        currentWave++;
         waveEnemyTotalCount = CalculateEnemyWaveCount();
         enemiesRemaining = 0;
 
@@ -135,8 +149,4 @@ public class EnemyWaveManager : MonoBehaviour
         Debug.Log("Enemy Wave Manager reset to wave 1");
     }
 
-    public int GetCurrentWave(int currentwave)
-    {
-        return currentWave;        
-    }
 }
