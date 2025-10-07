@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun1: {fileID: 1155229560}
   gun2: {fileID: 2141828613}
-  gatlingGun: {fileID: 1050144908}
+  gatlingGun: {fileID: 0}
   pofAwayEffect: {fileID: 2808157444633334233, guid: 99204f4f8caddeb45b7c482618e7841e, type: 3}
 --- !u!4 &132509579
 Transform:
@@ -13959,11 +13959,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.008976316, y: -0.064772196, z: -0.067473285}
     m_Extent: {x: 0.0043462086, y: 0.006806761, z: 0.0068782493}
   m_DirtyAABB: 0
---- !u!1 &1050144908 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3338418764129446576, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-  m_PrefabInstance: {fileID: 1128820361}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1055938093
 GameObject:
   m_ObjectHideFlags: 0
@@ -14907,6 +14902,10 @@ PrefabInstance:
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 62129304}
+    - target: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
+      propertyPath: tempMeterObject
+      value: 
+      objectReference: {fileID: 943670396}
     - target: {fileID: 3285095567152120463, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.897
@@ -14968,17 +14967,6 @@ PrefabInstance:
       addedObject: {fileID: 943670402}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
---- !u!114 &1128820363 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 31938045553298197, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-  m_PrefabInstance: {fileID: 1128820361}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90397fb257d4a614fb6d416e870fd4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1130280898
 GameObject:
   m_ObjectHideFlags: 0
@@ -24605,7 +24593,7 @@ PrefabInstance:
     - target: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
       propertyPath: GatlingGunScript
       value: 
-      objectReference: {fileID: 1128820363}
+      objectReference: {fileID: 0}
     - target: {fileID: 7220130342358119393, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
       propertyPath: cameraRig
       value: 
