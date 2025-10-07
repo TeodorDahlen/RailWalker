@@ -57,6 +57,11 @@ public class EnemyWaveManager : MonoBehaviour
     {
         return currentWave * waveMultiplier;
     }
+    
+    public float TimeBetweenWaves()
+    {
+        return timeBetweenWaves;
+    }
 
     private IEnumerator StartWave()
     {
@@ -72,7 +77,7 @@ public class EnemyWaveManager : MonoBehaviour
         }
 
         // yield return new WaitForSeconds(timeBetweenWaves);
-            yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f);
 
         int enemiesToSpawn = waveEnemyTotalCount;
 

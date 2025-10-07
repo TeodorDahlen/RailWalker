@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class WaveUIManager : MonoBehaviour
 {
@@ -19,8 +18,9 @@ public class WaveUIManager : MonoBehaviour
             Debug.LogError("UI Text references are not assigned in the inspector.");
             return;
         }
+
         TimeUntilNextWaveText.gameObject.SetActive(false);
-        //UpdateWaveUI(1, 0);
+        waveText.gameObject.SetActive(false);
     }
 
     public void ShowWaveStartText(int currentWave)
@@ -35,26 +35,25 @@ public class WaveUIManager : MonoBehaviour
     }
     private IEnumerator ShowWaveText(int currentWave)
     {
-        yield return new WaitForSeconds(1f); // Small delay before showing wave text
+        yield return new WaitForSeconds(1f);
 
         waveText.gameObject.SetActive(true);
         waveText.text = $"Wave {currentWave}";
 
-        // Fade in
         float elapsedTime = 0f;
         Color originalColor = waveText.color;
+
         while (elapsedTime < waveTextFadeDuration)
         {
             waveText.color = new Color(originalColor.r, originalColor.g, originalColor.b, Mathf.Lerp(0, 1, elapsedTime / waveTextFadeDuration));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
         waveText.color = new Color(originalColor.r, originalColor.g, originalColor.b, 1);
 
-        // Wait for display time
         yield return new WaitForSeconds(waveTextDisplayTime);
 
-        // Fade out
         elapsedTime = 0f;
         while (elapsedTime < waveTextFadeDuration)
         {
@@ -62,6 +61,7 @@ public class WaveUIManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
         waveText.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
         waveText.gameObject.SetActive(false);
 
@@ -69,11 +69,12 @@ public class WaveUIManager : MonoBehaviour
     private IEnumerator UpdateCountdown(float timeUntilNextWave)
     {
         TimeUntilNextWaveText.gameObject.SetActive(true);
+        timeUntilNextWave = EnemyWaveManager.TimeBetweenWaves();
         float countdown = timeUntilNextWave;
 
         while (countdown > 0)
         {
-            TimeUntilNextWaveText.text = $"Next Wave In: {Mathf.Ceil(countdown)}s";
+            TimeUntilNextWaveText.text = $"next wave in:{ Mathf.Ceil(countdown)}";
             yield return new WaitForSeconds(1f);
             countdown -= 1f;
         }
