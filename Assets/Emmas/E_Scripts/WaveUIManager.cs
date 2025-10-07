@@ -11,15 +11,9 @@ public class WaveUIManager : MonoBehaviour
     [SerializeField] private float waveTextFadeDuration = 1f;
     [SerializeField] private float waveCountdown;
     [SerializeField] private EnemyWaveManager EnemyWaveManager;
-    [SerializeField] private AudioClip countdownClip;
-    [SerializeField] private AudioClip waveStartClip;
-
-    private AudioSource audioSource;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
         if (waveText == null || TimeUntilNextWaveText == null)
         {
             Debug.LogError("UI Text references are not assigned in the inspector.");
@@ -48,7 +42,6 @@ public class WaveUIManager : MonoBehaviour
     }
     private IEnumerator ShowWaveText(int currentWave)
     {
-        audioSource.PlayOneShot(waveStartClip);
         yield return new WaitForSeconds(1f);
 
         foreach (var waveText in waveText)
@@ -98,17 +91,11 @@ public class WaveUIManager : MonoBehaviour
         timeUntilNextWave = EnemyWaveManager.GetTimeBetweenWaves(timeUntilNextWave);
         float countdown = timeUntilNextWave;
 
-        while (countdown > -1)
+        while (countdown > 0)
         {
             foreach (var TimeUntilNextWaveText in TimeUntilNextWaveText)
             TimeUntilNextWaveText.text = $"next wave in:{ Mathf.Ceil(countdown)}";
             yield return new WaitForSeconds(1f);
-
-            if (countdown <= 6f && countdown > 0f)
-            {
-                audioSource.PlayOneShot(countdownClip);
-            }
-
             countdown -= 1f;
         }
 
