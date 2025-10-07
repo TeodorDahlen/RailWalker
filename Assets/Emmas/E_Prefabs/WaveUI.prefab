@@ -26,16 +26,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062273571881990481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -236.187}
-  m_LocalScale: {x: 0.004763048, y: 0.004763048, z: 0.004763048}
+  m_LocalPosition: {x: 0, y: 0, z: -236.229}
+  m_LocalScale: {x: 0.005136009, y: 0.0055514215, z: 0.0055514215}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 265438845739786339}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.66797, y: 51.523}
-  m_SizeDelta: {x: 164.42, y: 51.8}
+  m_AnchoredPosition: {x: 62.201, y: 51.294}
+  m_SizeDelta: {x: 121.9, y: 17.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &622765452105757845
 CanvasRenderer:
@@ -92,10 +92,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.6
-  m_fontSizeBase: 26
+  m_fontSize: 11.07
+  m_fontSizeBase: 11.07
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 10.316475, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -163,14 +163,14 @@ RectTransform:
   m_GameObject: {fileID: 2622362711576553332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -236.227}
-  m_LocalScale: {x: 0.0036489628, y: 0.0036489628, z: 0.0036489628}
+  m_LocalScale: {x: 0.00313289, y: 0.00313289, z: 0.00313289}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 265438845739786339}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 62.996666, y: 51.255}
+  m_AnchoredPosition: {x: 62.904, y: 51.245968}
   m_SizeDelta: {x: 125.3, y: 21.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6694799917184307811
@@ -442,8 +442,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1158587449614226201}
-  - {fileID: 7950051246747663634}
   - {fileID: 3430574623630921691}
+  - {fileID: 7950051246747663634}
   - {fileID: 6724252698622364777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -529,10 +529,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveText:
   - {fileID: 4720927828770712171}
-  - {fileID: 1623046273724873491}
+  - {fileID: 0}
   TimeUntilNextWaveText:
   - {fileID: 4383026286450395}
-  - {fileID: 6368482961284268195}
+  - {fileID: 0}
   waveTextDisplayTime: 3
   waveTextFadeDuration: 1
   waveCountdown: 0
