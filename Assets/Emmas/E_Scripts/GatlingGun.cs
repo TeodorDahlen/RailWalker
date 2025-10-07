@@ -27,7 +27,7 @@ public class GatlingGun : MonoBehaviour
     public float radius = 0.5f;
     public float maxDistance = 1000f;
     public LayerMask hitLayers;
-
+        
     private Vector3 originalLocalPos;
 
 
@@ -41,7 +41,7 @@ public class GatlingGun : MonoBehaviour
     public void ConstantFire()
     {
         canFire = CanShoot();
-
+        canFire = true;
         if (!canFire)
         {
             Debug.Log("Out of Ammo, need coal");
@@ -84,8 +84,8 @@ public class GatlingGun : MonoBehaviour
         CancelInvoke(nameof(FireFromRotatingPoint));
         CancelInvoke(nameof(RotateBarrel));
 
-        if (shootingPoint != null)
-            shootingPoint.transform.localPosition = originalLocalPos;
+        //if (shootingPoint != null)
+        //    shootingPoint.transform.localPosition = originalLocalPos;
     }
 
     public void Shoot()
