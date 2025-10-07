@@ -71,6 +71,8 @@ public class EnemyWaveManager : MonoBehaviour
 
     private IEnumerator StartWave()
     {
+        yield return new WaitForSeconds(1f);
+        
         if (waveUIManager != null)
         {
             waveUIManager.ShowWaveStartText(currentWave);
