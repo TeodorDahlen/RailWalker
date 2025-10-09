@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6724252698622364777}
   - component: {fileID: 622765452105757845}
   - component: {fileID: 6368482961284268195}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: CountdownTextShovel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 7950051246747663634}
   - component: {fileID: 6694799917184307811}
   - component: {fileID: 1623046273724873491}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: WaveTextShovel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 1158587449614226201}
   - component: {fileID: 5010233711642808560}
   - component: {fileID: 4720927828770712171}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: WaveTextMech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 7727990913890465853}
   - component: {fileID: 3982824674947358894}
   - component: {fileID: 70713235191622722}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: WaveUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +676,7 @@ GameObject:
   - component: {fileID: 3430574623630921691}
   - component: {fileID: 9011447105997147475}
   - component: {fileID: 4383026286450395}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: CountdownTextMech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
