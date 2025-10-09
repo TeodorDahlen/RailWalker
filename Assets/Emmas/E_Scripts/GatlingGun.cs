@@ -27,11 +27,6 @@ public class GatlingGun : MonoBehaviour
         
     private Vector3 originalLocalPos;
 
-    void Start()
-    {
-        tempMeterObject.SetActive(false);
-    }
-
     private bool CanShoot()
     {
         return ammoManager.HasAmmo() && canFire;
@@ -73,9 +68,9 @@ public class GatlingGun : MonoBehaviour
     {
         if (shootingPoint == null) return;
 
-        //Show Temp Meter
-        if (tempMeterObject != null)
-        tempMeterObject.SetActive(true);
+        // //Show Temp Meter
+        // if (tempMeterObject != null)
+        // tempMeterObject.SetActive(true);
 
         Shoot();
         if (recoil != null)
@@ -85,7 +80,7 @@ public class GatlingGun : MonoBehaviour
     [Button]
     public void StopFiring()
     {
-        tempMeterObject.SetActive(false);
+        // tempMeterObject.SetActive(false);
         CancelInvoke(nameof(FireFromRotatingPoint));
         CancelInvoke(nameof(RotateBarrel));
     }
@@ -137,14 +132,27 @@ public class GatlingGun : MonoBehaviour
 
     public void TriggerPressed(CallbackContext context)
     {
+        ConstantFire();
+            /*
+        Debug.Log("TriggerPressed(CallbackContext context)");
+
+        Debug.Log(context);  
+
         if (context.started)
         {
-            ConstantFire();
+            Debug.Log("TriggerPressed");
         }
         else if (context.canceled)
         {
             StopFiring();
-            Debug.Log("Cancel");
-        }
+            Debug.Log("TriggerCancel");
+        } */
+        
+    }
+
+    public void TriggerunPressed(CallbackContext context)
+    {
+        
+            StopFiring();
     }
 }

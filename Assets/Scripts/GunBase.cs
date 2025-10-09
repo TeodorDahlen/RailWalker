@@ -173,7 +173,14 @@ public class GunBase : MonoBehaviour
                 reloadStarted = true;
             }
             GameObject newVfx = Instantiate(reloadVFX, reloadSpot.transform.position, reloadSpot.transform.rotation);
+            
             newVfx.GetComponent<EffectLookAtPlayer>().Target = Camera.main.gameObject;
+            if (newVfx == null)
+            {
+                Debug.LogWarning("Reload VFX is null!");
+                return;
+            }
+            
             Destroy(newVfx, 1.0f);
             //audioSource.PlayOneShot(clickAudio);
         }
