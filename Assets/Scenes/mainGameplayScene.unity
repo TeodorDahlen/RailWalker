@@ -33134,7 +33134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e744bb9a4721647abdca74e96fff73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempMeter: {fileID: 585605228}
+  tempMeter:
+  - {fileID: 585605228}
+  - {fileID: 716518553}
 --- !u!65 &1873245514
 BoxCollider:
   m_ObjectHideFlags: 0
