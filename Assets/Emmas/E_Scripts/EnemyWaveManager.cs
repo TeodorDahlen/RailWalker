@@ -86,12 +86,8 @@ public class EnemyWaveManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         int enemiesToSpawn = waveEnemyTotalCount;
-
-        for (int i = 0; i < enemiesToSpawn; i++)
-        {
-            int spawnerIndex = Random.Range(0, enemySpawnerScript.Count);
-            enemySpawnerScript[spawnerIndex].SpawnEnemy(this);
-        }
+        int spawnerIndex = Random.Range(0, enemySpawnerScript.Count);
+        enemySpawnerScript[spawnerIndex].SpawnEnemy(this, enemiesToSpawn);
     }
 
     public void EnemySpawned()
