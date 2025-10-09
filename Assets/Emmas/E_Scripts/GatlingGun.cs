@@ -87,7 +87,7 @@ public class GatlingGun : MonoBehaviour
 
     public void Shoot()
     {
-        if(gameObject.activeSelf = false)
+        if(gameObject.activeSelf == false)
         {
             return;
         }

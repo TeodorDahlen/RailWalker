@@ -6,7 +6,7 @@ using UnityEngine.ProBuilder.MeshOperations;
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private float maxHealth;
+    public float maxHealth;
     [SerializeField]
     private float currentHealth;
 

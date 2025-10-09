@@ -19,6 +19,6 @@ public class HPbarUpdate : MonoBehaviour
 
     private void UpdateBar(float amount)
     {
-        HpBar.value = health.GetHealth() / maxHealth;
+        HpBar.value = health.GetHealth() / health.maxHealth;
     }
 }
