@@ -99,8 +99,5 @@ public class Container : MonoBehaviour
     {
         amIdead = false;
         childVisualContainer.gameObject.SetActive(true);
-    }
-
-    
-            
+    }       
 }

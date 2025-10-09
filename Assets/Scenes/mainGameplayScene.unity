@@ -19422,10 +19422,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3285095567152120463, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1378037451}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8040863889240439668, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1536965865}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
 --- !u!1 &1128820362 stripped
 GameObject:
@@ -19681,7 +19678,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136050394}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 
@@ -29375,18 +29372,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3285095567152120463, guid: d984027d2cab5544b885bda4d2315cc0, type: 3}
   m_PrefabInstance: {fileID: 1128820361}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1536965865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128820362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd88ac862c4ca4f48a60c8856815324d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1537873755
 GameObject:
   m_ObjectHideFlags: 0
@@ -39766,6 +39751,7 @@ GameObject:
   - component: {fileID: 9072449606076246596}
   - component: {fileID: 9072449606076246595}
   - component: {fileID: 9072449606076246594}
+  - component: {fileID: 9072449606076246598}
   m_Layer: 9
   m_Name: --- TRAIN ---
   m_TagString: Player
@@ -39915,6 +39901,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   everything: []
+--- !u!114 &9072449606076246598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414944417903086484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40618040a1cd0464d90cabbbf92d8d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  currentHealth: 30
+  DeathEffect: {fileID: 0}
+  Core: {fileID: 0}
+  containerScript: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
