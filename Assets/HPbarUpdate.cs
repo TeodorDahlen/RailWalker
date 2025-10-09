@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public class HPbarUpdate : MonoBehaviour
 {
@@ -20,5 +22,10 @@ public class HPbarUpdate : MonoBehaviour
     private void UpdateBar(float amount)
     {
         HpBar.value = health.GetHealth() / health.maxHealth;
+
+        if (health.GetHealth() <= 0)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 }

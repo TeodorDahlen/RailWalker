@@ -94,7 +94,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5353654285269002413}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 318259cbc84925047bde9063b8ab2338, type: 3}
   m_Name: 
@@ -130,5 +130,3 @@ MonoBehaviour:
   ShovelScript: {fileID: 0}
   GatlingGunScript: {fileID: 0}
   gatlingGrab: {fileID: 0}
-  gatlingOrgPos: {x: 0, y: 0, z: 0}
-  gatlingOrgRot: {x: 0, y: 0, z: 0, w: 0}

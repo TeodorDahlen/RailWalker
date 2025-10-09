@@ -2119,6 +2119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4339211154246119915, guid: 019706462e9432b4a9659fe53011a04f, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6540834982123088410, guid: 019706462e9432b4a9659fe53011a04f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -21264,7 +21268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3df6c7cf00a445c4383d396d5edfc79d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3df6c7cf00a445c4383d396d5edfc79d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27780,7 +27784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1509054432
 Transform:
   m_ObjectHideFlags: 0
@@ -31377,10 +31381,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1128820362}
     - target: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
-      propertyPath: ShovelScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401974378767794927, guid: 10d063d1cdcc2de409afae451dd63b55, type: 3}
       propertyPath: GatlingGunScript
       value: 
       objectReference: {fileID: 1369558702}
@@ -31431,7 +31431,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1760387948}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714986781}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 318259cbc84925047bde9063b8ab2338, type: 3}
   m_Name: 
