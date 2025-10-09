@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TempatureMeter : MonoBehaviour
@@ -38,5 +39,6 @@ public class TempatureMeter : MonoBehaviour
         // Map 0–100 heat to 0–180 degrees rotation
         float angle = Heat * 1.8f;
         pointer.transform.localRotation = Quaternion.Euler(0, 0, -angle);
+
     }
 }

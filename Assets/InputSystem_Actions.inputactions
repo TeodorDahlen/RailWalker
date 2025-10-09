@@ -1070,6 +1070,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "trigger_GatlingGun",
+                    "type": "Button",
+                    "id": "20194d65-e6ad-4c3c-b873-0a2e420f9b88",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1099,10 +1108,21 @@
                     "name": "",
                     "id": "6fbbe0e8-8c5e-4d73-829d-5f4b5f8eab09",
                     "path": "<OculusTouchController>{RightHand}/triggerPressed",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Shoot_GatlingGun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd3ba9e0-a60b-46f5-9e67-f218254ccbba",
+                    "path": "<OculusTouchController>{RightHand}/triggerPressed",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "trigger_GatlingGun",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
