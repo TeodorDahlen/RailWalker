@@ -96,4 +96,12 @@ public class CentipedeMonster : MonoBehaviour
         DamageTaken++;
     }
 
+
+    private void OnDestroy()
+    {
+        foreach (GameObject Body in Segments)
+        {
+            Destroy(Body);
+        }
+    }
 }
