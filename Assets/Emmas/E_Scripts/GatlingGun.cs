@@ -87,6 +87,10 @@ public class GatlingGun : MonoBehaviour
 
     public void Shoot()
     {
+        if(gameObject.activeSelf == false)
+        {
+            return;
+        }
         if (!CanShoot())
         {
             Debug.Log("StopFiring() triggered in Shoot(), need more coal");
