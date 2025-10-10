@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class ChoChotransis : MonoBehaviour
 {
     [SerializeField] bool isPressed = false;
+    [SerializeField] bool canTeleport = false;
     public UnityEvent onPress;
     public float orgposY;
     [SerializeField] float stopHere;
@@ -23,11 +24,21 @@ public class ChoChotransis : MonoBehaviour
 
     }
 
+    public void CanTeleport()
+    {
+        canTeleport = true;
+    }
+
+    public void CantTEleport()
+    {
+        canTeleport = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (!isPressed)
+        if (!isPressed && canTeleport)
         {
-            if (transform.position.y <= stopHere)
+            if (transform.position.y <= stopHere + 0.2f)
             {
                 FadeToBlack.Instance.FadeToDarkness(transis.ToMech);
                 //sound.Play();
