@@ -59,9 +59,18 @@ public class Health : MonoBehaviour
 
     public void PlayDeath()
     {
-        GameObject newEffect = Instantiate(DeathEffect, transform.position, Quaternion.identity);
-        Destroy(newEffect, 2);
-        Destroy(gameObject);
+        if (DeathEffect != null)
+        {
+            GameObject newEffect = Instantiate(DeathEffect, transform.position, Quaternion.identity);
+            Destroy(newEffect, 2);
+            Destroy(gameObject);
+        }
+
+        else
+        {
+            Debug.Log("DeathEffect not assigned");
+            return;
+        }
     }
 
     public float GetHealth()

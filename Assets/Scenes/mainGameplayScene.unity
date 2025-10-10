@@ -38281,7 +38281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWave: 1
-  waveMultiplier: 2
+  waveMultiplier: 3
   baseTimeBetweenWaves: 10
   timeMultiplyer: 2
   player: {fileID: 132509577}
